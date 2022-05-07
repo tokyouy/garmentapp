@@ -1,0 +1,25 @@
+﻿<Window x:Class="garmentapp.regWin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:garmentapp"
+        mc:Ignorable="d"
+        Title="Garment" Height="650" Width="400" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="420"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="80"/>
+        </Grid.RowDefinitions>
+
+        <Button Grid.Row="2" Margin="8" Content="Зарегистрироваться" Click="Button_Click"/>
+        <StackPanel Grid.Row="1">
+            <TextBox x:Name="tbfName" Height="45" Margin="8" Width="299" Text="{Binding firstName}"/>
+            <TextBox x:Name="tbsName" Height="45" Margin="8" Text="{Binding secondName}"/>
+            <TextBox x:Name="tbLogin" Height="45" Margin="8" Text="{Binding login}"/>
+            <TextBox x:Name="tbPassword" Height="45" Margin="8" Text="{Binding password}"/>
+        </StackPanel>
+    </Grid>
+</Window>
