@@ -54,8 +54,8 @@ namespace garmentapp
 
         private void RegisterBtn_Click_1(object sender, RoutedEventArgs e)
         {
-            regWin regWindow = new regWin();
-            regWindow.Show();
+            regWin registrationWin = new regWin();
+            registrationWin.Show();
         }
 
         

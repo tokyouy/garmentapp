@@ -5,26 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:garmentapp"
         mc:Ignorable="d"
-        Title="Garment" Height="450" Width="400" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen">
-    <Grid>
+        Title="Garment" Height="450" Width="400" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" Background="#dadfdf">
+    <Grid Height="434" VerticalAlignment="Top">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="50"/>
             <RowDefinition/>
-            <RowDefinition Height="50"/>
         </Grid.RowDefinitions>
-        <Canvas Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="1" Background="DarkSlateGray" Margin="0,275,0,0" Grid.RowSpan="2"/>
-        <Canvas Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" Background="DarkSlateGray" Margin="0,0,0,275" Grid.RowSpan="2"/>
-        <StackPanel x:Name="LoginSector" Grid.Row="1" Grid.Column="0" Height="300" Width="400">
-            <TextBox x:Name="tbLogin" HorizontalAlignment="Center" VerticalAlignment="Top" Height="40" Width="275"
-                       Margin="48,60,71,15" Background="#FFFAFAFD" FontSize="18"/>
-            <PasswordBox x:Name="pbPass" HorizontalAlignment="Center" VerticalAlignment="Top" Height="40" Width="275"
+        <Canvas Grid.Column="0" Grid.Row="0" Background="DarkSlateGray" Margin="0,0,0,300" Grid.RowSpan="2" RenderTransformOrigin="0.495,1.028"/>
+        <StackPanel x:Name="LoginSector" Grid.Row="1" Grid.Column="0" Width="400">
+            <TextBox x:Name="tbLogin" HorizontalAlignment="Center" VerticalAlignment="Top" Height="30" Width="275"
+                       Margin="48,160,71,15" Background="#FFFAFAFD" FontSize="18"/>
+            <PasswordBox x:Name="pbPass" HorizontalAlignment="Center" VerticalAlignment="Top" Height="30" Width="275"
                        Margin="48,0,71,0" Background="#FFFAFAFD" FontSize="18"/>
-            <CheckBox x:Name="Check" Content="Показать пароль" HorizontalAlignment="Right" Margin="0,10,80,0"/>
-            <Button x:Name="LoginBtn" Content="Войти" Height="35" Width="130" HorizontalAlignment="Left" Margin="50,10,0,0" Click="LoginBtn_Click" FontSize="18"/>
-            <Button x:Name="RegisterBtn" Content="Регистрация" Height="35" Width="130" HorizontalAlignment="Right" Margin="0,-35,75,15" Click="RegisterBtn_Click_1" FontSize="18"/>
+            <CheckBox x:Name="Check" Content="Показать пароль" HorizontalAlignment="Right" Margin="0,10,85,0"/>
+            <Button x:Name="LoginBtn" Content="Войти" Height="27" Width="130" HorizontalAlignment="Left" Margin="50,20,0,0" Click="LoginBtn_Click" FontSize="14"/>
+            <Button x:Name="RegisterBtn" Content="Регистрация" Height="27" Width="130" HorizontalAlignment="Right" Margin="0,-27,75,15" Click="RegisterBtn_Click_1" FontSize="14"/>
         </StackPanel>
+        <Label Content="Авторизация" FontSize="50" Foreground="White" Margin="40,25,0,300" Grid.RowSpan="2"/>
     </Grid>
 </Window>
