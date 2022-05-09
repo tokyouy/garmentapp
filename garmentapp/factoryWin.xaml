@@ -32,7 +32,7 @@
             </StackPanel>
             </Canvas>
         <Canvas Name="Logo" Grid.Column="0" Grid.Row="0">
-            <Label Content="Factory" Canvas.Left="25" Canvas.Top="20" FontSize="50"/>
+            <Label Content="Factory" Canvas.Left="40" Canvas.Top="20" FontSize="50"/>
         </Canvas>
     </Grid>
 </Window>
