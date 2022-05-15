@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:garmentapp"
         mc:Ignorable="d"
-        Title="userWin" Height="600" Width="1200" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Background="#dadfdf">
+        Title="Garment" Height="600" Width="1200" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Background="#dadfdf">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="250"/>
@@ -16,19 +16,21 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Canvas x:Name="SideBar" Grid.Column="0" Grid.Row="1" Margin="0,25,0,0">
-            <Button x:Name="btnShop" Content="Магазин" Background="White" Height="60" Width="251" Margin="0,5" FontSize="18"/>
-            <Button x:Name="btnUserSettings" Content="Учетная запись" Background="White" Height="60" Width="251" Margin="0,70" FontSize="18"/>
-            <Button x:Name="btnAppSettings" Content="Настройки" Background="White" Height="60" Width="251" Margin="0,135,0,0" FontSize="18"/>
+            <Button x:Name="btnShop" Content="Магазин" Background="White" Height="60" Width="251" Margin="0,5" FontSize="18" Click="btnShop_Click"/>
+            <Button x:Name="btnBasket" Content="Корзина" Background="White" Height="60" Width="251" Margin="0,70" FontSize="18" Click="btnBasket_Click"/>
+            <Button x:Name="btnUserSettings" Content="Настройки" Background="White" Height="60" Width="251" Margin="0,135,0,0" FontSize="18" Click="btnUserSettings_Click"/>
             <Canvas Margin="50,425">
                 <Label Content="Помощь" Width="123" Height="38" Canvas.Top="-18" Canvas.Left="22" FontSize="18"/>
             </Canvas>
         </Canvas>
         <Canvas Name="GridPos" Grid.Column="1" Grid.Row="1" Background="DarkSlateGray">
-            <DataGrid Height="450" Width="880" Canvas.Left="36" Canvas.Top="10"/>
+            <Frame Name="MainFrame" Background="DarkSlateGray"/>
+            <Frame Name="BasketFrame" Background="DarkSlateGray"/>
+            <Frame Name="UserSettingsFrame" Background="DarkSlateGray"/>
+            <DataGrid Grid.Column="1" Grid.Row="1" Height="450" Width="900" Canvas.Left="10" Canvas.Top="10" HorizontalAlignment="Center" VerticalAlignment="Top"></DataGrid>
         </Canvas>
         <Canvas Name="TopApp" Grid.Column="1" Grid.Row="0" Background="DarkSlateGray"/>
         <Canvas Name="Logo" Grid.Column="0" Grid.Row="0">
-            <Image x:Name="LogoINAPP" Source="/Assets/login/logo.png" Height="128" Width="134" Canvas.Left="-18" Canvas.Top="-18"/>
             <Label Content="Garment" Canvas.Left="25" Canvas.Top="20" FontSize="50"/>
         </Canvas>
     </Grid>

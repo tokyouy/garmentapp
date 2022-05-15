@@ -15,20 +15,17 @@
             <RowDefinition Height="85"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <Canvas x:Name="SideBar" Grid.Column="0" Grid.Row="1" Margin="0,25,0,0">
-            <Button x:Name="btnShop" Content="Магазин" Background="White" Height="60" Width="251" Margin="0,5" FontSize="18"/>
-            <Button x:Name="btnUserSettings" Content="Учетная запись" Background="White" Height="60" Width="251" Margin="0,70" FontSize="18"/>
-            <Button x:Name="btnAppSettings" Content="Настройки" Background="White" Height="60" Width="251" Margin="0,135,0,0" FontSize="18"/>
-            <Canvas Margin="50,425">
-                <Label Content="Помощь" Width="123" Height="38" Canvas.Top="-18" Canvas.Left="22" FontSize="18"/>
-            </Canvas>
-        </Canvas>
+        <Grid x:Name="SideBar" Grid.Column="0" Grid.Row="1" Margin="0,25,0,0">
+            <Button x:Name="btnCatalog" Content="Каталог" Background="White" Height="60" Width="251" FontSize="18" Margin="0,-400,0,0"/>
+            <Button x:Name="btnUserSettings" Content="Учетная запись" Background="White" Height="60" Width="251" FontSize="18" Margin="0,-270,0,0"/>
+            <Button x:Name="btnAppSettings" Content="Настройки" Background="White" Height="60" Width="251" FontSize="18" Margin="0,-140,0,0"/>
+        </Grid>
         <Canvas Name="GridPos" Grid.Column="1" Grid.Row="1" Background="DarkSlateGray">
             <DataGrid Height="450" Width="880" Canvas.Left="36" Canvas.Top="10"/>
         </Canvas>
             <Canvas Name="TopApp" Grid.Column="1" Grid.Row="0" Background="DarkSlateGray">
             <StackPanel>
-                <TextBox x:Name="tbSearch" Height="30" Width="400" Margin="35,40,0,0"/>
+                <TextBox x:Name="tbSearch" Height="30" Width="400" Margin="35,40,0,0" TextChanged="tbSearch_TextChanged"/>
             </StackPanel>
             </Canvas>
         <Canvas Name="Logo" Grid.Column="0" Grid.Row="0">

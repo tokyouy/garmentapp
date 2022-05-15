@@ -12,23 +12,12 @@ namespace garmentapp
     using System;
     using System.Collections.Generic;
     
-    public partial class user
+    public partial class product
     {
         public int id { get; set; }
-        public string firstName { get; set; }
-        public string secondName { get; set; }
-        public string login { get; set; }
-        public string password { get; set; }
-        public int roleid { get; set; }
-
-        public string FullName
-        {
-            get
-            {
-                return $"{firstName} {secondName}";
-            }
-        }
-
-        public virtual role role { get; set; }
+        public string brend { get; set; }
+        public string season { get; set; }
+        public string color { get; set; }
+        public string picture { get; set; }
     }
 }

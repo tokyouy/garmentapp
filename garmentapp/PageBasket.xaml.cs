@@ -10,24 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace garmentapp
 {
     /// <summary>
-    /// Логика взаимодействия для facWin.xaml
+    /// Логика взаимодействия для PageBasket.xaml
     /// </summary>
-    public partial class facWin : Window
+    public partial class PageBasket : Page
     {
-        public facWin()
+        public PageBasket()
         {
             InitializeComponent();
-        }
-
-        private void tbSearch_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            var product = garmentEntities.GetContext().products.Where(p => p.color == tbSearch.Text).ToList();
-            Manger.dgProducts.ItemsSource = product;
         }
     }
 }

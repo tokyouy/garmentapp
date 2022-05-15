@@ -15,21 +15,20 @@ namespace garmentapp
     
     public partial class garmentEntities : DbContext
     {
-        public garmentEntities()
-            : base("name=garmentEntities")
-        {
-        }
-
         public static garmentEntities _context;
         public static garmentEntities GetContext()
         {
-            if (_context == null)
+            if(_context == null)
             {
                 _context = new garmentEntities();
             }
             return _context;
         }
-
+        public garmentEntities()
+            : base("name=garmentEntities")
+        {
+        }
+    
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
@@ -38,5 +37,6 @@ namespace garmentapp
         public virtual DbSet<role> roles { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<user> users { get; set; }
+        public virtual DbSet<product> products { get; set; }
     }
 }

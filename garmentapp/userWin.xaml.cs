@@ -23,5 +23,20 @@ namespace garmentapp
         {
             InitializeComponent();
         }
+
+        private void btnShop_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void btnBasket_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Content = new PageBasket();
+        }
+
+        private void btnUserSettings_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

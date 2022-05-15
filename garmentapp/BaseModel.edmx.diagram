@@ -9,6 +9,7 @@
         <EntityTypeShape EntityType="garmentModel.sysdiagram" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="garmentModel.user" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <AssociationConnector Association="garmentModel.FK_user_role" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="garmentModel.product" Width="1.5" PointX="3.375" PointY="4.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -17,6 +16,7 @@
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -39,10 +39,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -67,6 +67,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddEditProduct.xaml.cs">
+      <DependentUpon>AddEditProduct.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddEditUser.xaml.cs">
+      <DependentUpon>AddEditUser.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AdminProduct.xaml.cs">
+      <DependentUpon>AdminProduct.xaml</DependentUpon>
+    </Compile>
     <Compile Include="BaseModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -75,11 +84,22 @@
     <Compile Include="factoryWin.xaml.cs">
       <DependentUpon>factoryWin.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MainFrame.cs" />
+    <Compile Include="Manger.cs" />
+    <Compile Include="PageBasket.xaml.cs">
+      <DependentUpon>PageBasket.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="product.cs">
+      <DependentUpon>BaseModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="regWin.xaml.cs">
       <DependentUpon>regWin.xaml</DependentUpon>
     </Compile>
     <Compile Include="role.cs">
       <DependentUpon>BaseModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SetingsProfile.xaml.cs">
+      <DependentUpon>SetingsProfile.xaml</DependentUpon>
     </Compile>
     <Compile Include="sysdiagram.cs">
       <DependentUpon>BaseModel.tt</DependentUpon>
@@ -87,9 +107,27 @@
     <Compile Include="user.cs">
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="UserProduct.xaml.cs">
+      <DependentUpon>UserProduct.xaml</DependentUpon>
+    </Compile>
     <Compile Include="userWin.xaml.cs">
       <DependentUpon>userWin.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserWindow.xaml.cs">
+      <DependentUpon>UserWindow.xaml</DependentUpon>
+    </Compile>
+    <Page Include="AddEditProduct.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddEditUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminProduct.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="factoryWin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -116,11 +154,27 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="PageBasket.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="regWin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="SetingsProfile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserProduct.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="userWin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -177,12 +231,4 @@
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>Данный проект ссылается на пакеты NuGet, отсутствующие на этом компьютере. Используйте восстановление пакетов NuGet, чтобы скачать их.  Дополнительную информацию см. по адресу: http://go.microsoft.com/fwlink/?LinkID=322105. Отсутствует следующий файл: {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
-    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
-  </Target>
-  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
 </Project>

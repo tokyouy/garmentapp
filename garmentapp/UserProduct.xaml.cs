@@ -10,24 +10,26 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace garmentapp
 {
     /// <summary>
-    /// Логика взаимодействия для facWin.xaml
+    /// Логика взаимодействия для UserProduct.xaml
     /// </summary>
-    public partial class facWin : Window
+    public partial class UserProduct : Page
     {
-        public facWin()
+        public UserProduct()
         {
             InitializeComponent();
+            dgProducts.ItemsSource = garmentEntities.GetContext().products.ToList();
+            Manger.dgProducts = dgProducts;
         }
 
-        private void tbSearch_TextChanged(object sender, TextChangedEventArgs e)
+        private void dgProducts_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            var product = garmentEntities.GetContext().products.Where(p => p.color == tbSearch.Text).ToList();
-            Manger.dgProducts.ItemsSource = product;
+
         }
     }
 }
