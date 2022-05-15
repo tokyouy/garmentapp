@@ -76,6 +76,9 @@
     <Compile Include="AdminProduct.xaml.cs">
       <DependentUpon>AdminProduct.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AdminWin.xaml.cs">
+      <DependentUpon>AdminWin.xaml</DependentUpon>
+    </Compile>
     <Compile Include="BaseModel.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -125,6 +128,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AdminProduct.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminWin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

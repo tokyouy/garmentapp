@@ -36,7 +36,7 @@ namespace garmentapp
             if (MessageBox.Show("Вы уверены что хотите удалить запись?", "Вы уверены?", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
                 var selectedItem = dgUsers.SelectedItem;
-                garmentEntities.GetContext().user.Remove(selectedItem as user);
+                garmentEntities.GetContext().users.Remove(selectedItem as user);
                 try
                 {
                     garmentEntities.GetContext().SaveChanges();
