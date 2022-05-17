@@ -11,10 +11,11 @@
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="idUser" Type="int" />
-          <Property Name="brend" Type="nvarchar" MaxLength="16" Nullable="false" />
+          <Property Name="brend" Type="nvarchar" MaxLength="16" />
           <Property Name="season" Type="nvarchar" MaxLength="16" Nullable="false" />
           <Property Name="amount" Type="int" Nullable="false" />
           <Property Name="type" Type="nvarchar" MaxLength="16" Nullable="false" />
+          <Property Name="color" Type="nvarchar" MaxLength="16" Nullable="false" />
         </EntityType>
         <EntityType Name="product">
           <Key>
@@ -105,10 +106,11 @@
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="idUser" Type="Int32" />
-          <Property Name="brend" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="brend" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
           <Property Name="season" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="amount" Type="Int32" Nullable="false" />
           <Property Name="type" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="color" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="users" Relationship="Self.FK_order_users" FromRole="order" ToRole="users" />
         </EntityType>
         <EntityType Name="product">
@@ -207,6 +209,7 @@
                 <ScalarProperty Name="season" ColumnName="season" />
                 <ScalarProperty Name="amount" ColumnName="amount" />
                 <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="color" ColumnName="color" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

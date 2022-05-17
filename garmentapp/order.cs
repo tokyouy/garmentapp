@@ -20,6 +20,7 @@ namespace garmentapp
         public string season { get; set; }
         public int amount { get; set; }
         public string type { get; set; }
+        public string color { get; set; }
     
         public virtual users users { get; set; }
     }
