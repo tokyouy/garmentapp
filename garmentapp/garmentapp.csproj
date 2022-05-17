@@ -108,8 +108,8 @@
     <Compile Include="order.cs">
       <DependentUpon>BaseModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="PageBasket.xaml.cs">
-      <DependentUpon>PageBasket.xaml</DependentUpon>
+    <Compile Include="orderWin.xaml.cs">
+      <DependentUpon>orderWin.xaml</DependentUpon>
     </Compile>
     <Compile Include="product.cs">
       <DependentUpon>BaseModel.tt</DependentUpon>
@@ -178,7 +178,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="PageBasket.xaml">
+    <Page Include="orderWin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
