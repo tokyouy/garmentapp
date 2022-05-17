@@ -19,6 +19,7 @@ namespace garmentapp
     /// </summary>
     public partial class AddEditProduct : Window
     {
+
         product _currentProduct = new product();
         public AddEditProduct(product selecteProduct)
         {

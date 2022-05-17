@@ -1,4 +1,4 @@
-﻿<Window x:Class="garmentapp.UserWindow"
+﻿<Window x:Name="UserPage" x:Class="garmentapp.UserWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
@@ -14,8 +14,10 @@
         <DataGrid Name="dgUsers" AutoGenerateColumns="False" IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding id}"></DataGridTextColumn>
-                <DataGridTextColumn Header="ФИО" Binding="{Binding FullName}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Имя" Binding="{Binding firstName}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Фамилия" Binding="{Binding secondName}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Логин" Binding="{Binding login}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Пароль" Binding="{Binding password}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Роль" Binding="{Binding role.name}"></DataGridTextColumn>
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
@@ -30,10 +32,8 @@
             </DataGrid.Columns>
         </DataGrid>
         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Button x:Name="btnMainMenu" Content="Главное меню" Height="30" Width="100" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,10,0" Click="btnMainMenu_Click"/>
             <Button x:Name="btnAdd" Content="Добавить" Height="30" Width="100" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,10,0" Click="btnAdd_Click"/>
             <Button x:Name="btnOut" Content="Выйти" Height="30" Width="100" VerticalAlignment="Center" HorizontalAlignment="Center" Click="btnOut_Click" />
         </StackPanel>
-
     </Grid>
 </Window>
