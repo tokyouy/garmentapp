@@ -13,7 +13,8 @@
           <Property Name="brend" Type="nvarchar" MaxLength="16" Nullable="false" />
           <Property Name="season" Type="nvarchar" MaxLength="16" Nullable="false" />
           <Property Name="color" Type="nvarchar" MaxLength="16" Nullable="false" />
-          <Property Name="picture" Type="nvarchar" MaxLength="150" />
+          <Property Name="amount" Type="int" />
+          <Property Name="type" Type="nvarchar" MaxLength="16" />
         </EntityType>
         <EntityType Name="role">
           <Key>
@@ -78,7 +79,8 @@
           <Property Name="brend" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="season" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="color" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="picture" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="amount" Type="Int32" />
+          <Property Name="type" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="role">
           <Key>
@@ -145,7 +147,8 @@
                 <ScalarProperty Name="brend" ColumnName="brend" />
                 <ScalarProperty Name="season" ColumnName="season" />
                 <ScalarProperty Name="color" ColumnName="color" />
-                <ScalarProperty Name="picture" ColumnName="picture" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="type" ColumnName="type" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

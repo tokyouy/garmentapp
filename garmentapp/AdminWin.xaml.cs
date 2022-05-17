@@ -26,7 +26,12 @@ namespace garmentapp
 
         private void btnShop_Click(object sender, RoutedEventArgs e)
         {
+            MainFrame.Content = new AdminUser();
+        }
 
+        private void btnProductGrid_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Content = new AdminProduct();
         }
     }
 }

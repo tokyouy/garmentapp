@@ -15,6 +15,7 @@ namespace garmentapp
     
     public partial class garmentEntities : DbContext
     {
+
         public static garmentEntities _context;
         public static garmentEntities GetContext()
         {
@@ -24,6 +25,7 @@ namespace garmentapp
             }
             return _context;
         }
+
         public garmentEntities()
             : base("name=garmentEntities")
         {
