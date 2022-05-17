@@ -15,12 +15,12 @@
             <RowDefinition Height="85"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Grid x:Name="SideBar" Grid.Column="0" Grid.Row="1">
-            <Button x:Name="btnCatalog" Content="Каталог" Background="White" Height="60" Width="250" FontSize="18" Margin="0,-420,0,0" Click="btnCatalog_Click"/>
-            <Button x:Name="btnAppSettings" Content="Настройки" Background="White" Height="60" Width="250" FontSize="18" Margin="0,-285,0,0" Click="btnAppSettings_Click"/>
-        </Grid>
+        <StackPanel x:Name="SideBar" Grid.Column="0" Grid.Row="1">
+            <Button x:Name="btnCatalog" Content="Каталог" Background="White" Height="60" Width="250" FontSize="18" Margin="0,0,0,0" Click="btnCatalog_Click"/>
+            <Button x:Name="btnAppSettings" Content="Настройки" Background="White" Height="60" Width="250" FontSize="18" Margin="0,5,0,0" Click="btnAppSettings_Click"/>
+        </StackPanel>
         <Canvas Name="TopApp" Grid.Column="1" Grid.Row="0" Background="DarkSlateGray">
-            <TextBox x:Name="tbSearch" Height="30" Width="120" Margin="35,40,0,0" TextChanged="tbSearch_TextChanged"/>
+            <TextBox x:Name="tbSearch" Height="30" Width="120" Margin="35,40,0,0" TextChanged="tbSearch_TextChanged" Visibility="Hidden"/>
         </Canvas>
         <Canvas Name="Logo" Grid.Column="0" Grid.Row="0">
             <Label Content="Factory" Canvas.Left="40" Canvas.Top="10" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Top"/>
