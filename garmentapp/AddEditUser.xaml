@@ -5,30 +5,35 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:garmentapp"
         mc:Ignorable="d"
- Title="Добавление/редактирование пользователя" Height="450" Width="700" ResizeMode="NoResize">
-    <Grid >
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
-            <ColumnDefinition Width="*"/>
-        </Grid.ColumnDefinitions>
+        Title="Пользователи" Height="450" Width="800" ResizeMode="NoResize">
+    <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="383*"/>
+            <RowDefinition Height="36*"/>
         </Grid.RowDefinitions>
-        <TextBlock Text="Фамилия" VerticalAlignment="Center" FontSize="18" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="0" />
-        <TextBlock Text="Имя" VerticalAlignment="Center" FontSize="18" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="0"/>
-        <TextBlock Text="Логин" VerticalAlignment="Center" FontSize="18" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="0" />
-        <TextBlock Text="Пароль" VerticalAlignment="Center" FontSize="18" HorizontalAlignment="Center" Grid.Row="3" Grid.Column="0" />
-        <TextBlock Text="Роль" VerticalAlignment="Center" FontSize="18" HorizontalAlignment="Center" Grid.Row="4" Grid.Column="0" />
-        <Button Name="btnSave" Content="Сохранить" Height="30" Width="100" Grid.Row="5" Grid.ColumnSpan="2"  HorizontalAlignment="Center" VerticalAlignment="Center" Click="btnSave_Click" />
-        <TextBox x:Name="cbFullName" Text="{Binding firstName}" Height="30" Width="200" Grid.Row="0" Grid.Column="1"/>
-        <TextBox x:Name="cbsecondName" Text="{Binding secondName}" Height="30" Width="200" Grid.Row="1" Grid.Column="1"/>
-        <TextBox x:Name="tbLogin" Height="30" Text="{Binding login}" Width="200" Grid.Row="2" Grid.Column="1" />
-        <TextBox x:Name="tbPass" Height="30" Text="{Binding password}" Width="200" Grid.Row="3" Grid.Column="1" />
-        <ComboBox x:Name="cbRoles" DisplayMemberPath="name" SelectedValue="{Binding Path=role}"  Height="30" Width="200" Grid.Row="4" Grid.Column="1" />
+        <DataGrid Name="dgUsers" AutoGenerateColumns="False" IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="ID" Binding="{Binding id}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Имя" Binding="{Binding firstName}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Фамилия" Binding="{Binding secondName}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Логин" Binding="{Binding login}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Пароль" Binding="{Binding password}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Роль" Binding="{Binding role.name}"></DataGridTextColumn>
+                <DataGridTemplateColumn>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <StackPanel Orientation="Horizontal">
+                                <Button x:Name="btnEdit" Content="Редактировать" Margin="10,0,10,0" Height="20" Width="100"/>
+                                <Button x:Name="btnDelate" Content="Удалить" Height="20" Width="100" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button x:Name="btnAdd" Content="Добавить" Height="30" Width="100" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,10,0"/>
+            <Button x:Name="btnOut" Content="Выйти" Height="30" Width="100" VerticalAlignment="Center" HorizontalAlignment="Center" />
+        </StackPanel>
     </Grid>
 </Window>

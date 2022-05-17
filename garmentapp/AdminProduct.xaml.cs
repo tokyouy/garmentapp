@@ -18,7 +18,7 @@ namespace garmentapp
     /// <summary>
     /// Логика взаимодействия для AdminProduct.xaml
     /// </summary>
-    public partial class AdminProduct : Page
+    public partial class AdminProduct : Window
     {
         public AdminProduct()
         {
@@ -28,7 +28,7 @@ namespace garmentapp
 
         private void btnEdit_Click(object sender, RoutedEventArgs e)
         {
-            AddEditProduct addEditProduct = new AddEditProduct(null);
+            AddEditProduct addEditProduct = new AddEditProduct(dgProducts.SelectedItem as product);
             addEditProduct.Show();
         }
 
@@ -51,6 +51,12 @@ namespace garmentapp
         }
 
         private void btnAddProduct_Click(object sender, RoutedEventArgs e)
+        {
+            // AddEditProduct addEditProduct = new AddEditProduct(dgProducts.SelectedItem as product);
+            // addEditProduct.Show();
+        }
+
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
             AddEditProduct addEditProduct = new AddEditProduct(dgProducts.SelectedItem as product);
             addEditProduct.Show();
