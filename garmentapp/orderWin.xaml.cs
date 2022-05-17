@@ -16,13 +16,18 @@ using System.Windows.Shapes;
 namespace garmentapp
 {
     /// <summary>
-    /// Логика взаимодействия для PageBasket.xaml
+    /// Логика взаимодействия для orderWin.xaml
     /// </summary>
-    public partial class PageBasket : Page
+    public partial class orderWin : Page
     {
-        public PageBasket()
+        public orderWin()
         {
             InitializeComponent();
+        }
+
+        private void btnAddOrder_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
