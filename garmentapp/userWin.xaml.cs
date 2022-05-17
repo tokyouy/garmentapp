@@ -37,7 +37,7 @@ namespace garmentapp
 
         private void btnUserSettings_Click(object sender, RoutedEventArgs e)
         {
-
+            MainFrame.Content = new SetingsProfile();
         }
     }
 }

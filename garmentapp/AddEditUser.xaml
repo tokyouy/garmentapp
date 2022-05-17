@@ -19,16 +19,12 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-
         <TextBlock Text="Фамилия" VerticalAlignment="Center" FontSize="18" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="0" />
         <TextBlock Text="Имя" VerticalAlignment="Center" FontSize="18" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="0"/>
         <TextBlock Text="Логин" VerticalAlignment="Center" FontSize="18" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="0" />
         <TextBlock Text="Пароль" VerticalAlignment="Center" FontSize="18" HorizontalAlignment="Center" Grid.Row="3" Grid.Column="0" />
         <TextBlock Text="Роль" VerticalAlignment="Center" FontSize="18" HorizontalAlignment="Center" Grid.Row="4" Grid.Column="0" />
-
-
         <Button Name="btnSave" Content="Сохранить" Height="30" Width="100" Grid.Row="5" Grid.ColumnSpan="2"  HorizontalAlignment="Center" VerticalAlignment="Center" Click="btnSave_Click" />
-
         <TextBox x:Name="cbFullName" Text="{Binding firstName}" Height="30" Width="200" Grid.Row="0" Grid.Column="1"/>
         <TextBox x:Name="cbsecondName" Text="{Binding secondName}" Height="30" Width="200" Grid.Row="1" Grid.Column="1"/>
         <TextBox x:Name="tbLogin" Height="30" Text="{Binding login}" Width="200" Grid.Row="2" Grid.Column="1" />

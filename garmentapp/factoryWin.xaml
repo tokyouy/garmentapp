@@ -18,7 +18,7 @@
         <Grid x:Name="SideBar" Grid.Column="0" Grid.Row="1" Margin="0,25,0,0">
             <Button x:Name="btnCatalog" Content="Каталог" Background="White" Height="60" Width="251" FontSize="18" Margin="0,-400,0,0"/>
             <Button x:Name="btnUserSettings" Content="Учетная запись" Background="White" Height="60" Width="251" FontSize="18" Margin="0,-270,0,0"/>
-            <Button x:Name="btnAppSettings" Content="Настройки" Background="White" Height="60" Width="251" FontSize="18" Margin="0,-140,0,0"/>
+            <Button x:Name="btnAppSettings" Content="Настройки" Background="White" Height="60" Width="251" FontSize="18" Margin="0,-140,0,0" Click="btnAppSettings_Click"/>
         </Grid>
         <Canvas Name="GridPos" Grid.Column="1" Grid.Row="1" Background="DarkSlateGray">
             <DataGrid Height="450" Width="880" Canvas.Left="36" Canvas.Top="10"/>

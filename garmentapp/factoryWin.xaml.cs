@@ -29,5 +29,10 @@ namespace garmentapp
             var product = garmentEntities.GetContext().product.Where(p => p.color == tbSearch.Text).ToList();
             Manger.dgProducts.ItemsSource = product;
         }
+
+        private void btnAppSettings_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
