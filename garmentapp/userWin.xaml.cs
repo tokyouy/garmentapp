@@ -32,7 +32,7 @@ namespace garmentapp
 
         private void btnBasket_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Content = new PageBasket();
+           // MainFrame.Content = new PageBasket();
         }
 
         private void btnUserSettings_Click(object sender, RoutedEventArgs e)

@@ -13,7 +13,7 @@
                 <RowDefinition Height="133*"/>
                 <RowDefinition Height="17*"/>
             </Grid.RowDefinitions>
-            <DataGrid Name="dgProducts" AutoGenerateColumns="False" IsReadOnly="True" Grid.Row="0">
+            <DataGrid Name="dgOrders" AutoGenerateColumns="False" IsReadOnly="True" Grid.Row="0">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Сезон" Binding="{Binding season}"></DataGridTextColumn>
                     <DataGridTextColumn Header="Вид" Binding="{Binding type}"></DataGridTextColumn>

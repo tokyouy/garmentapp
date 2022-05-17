@@ -16,11 +16,11 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Image Source="assets/icon.png" Grid.Column="2" Grid.Row="1"/>
-        <Canvas x:Name="SideBar" Grid.Column="0" Grid.Row="1">
-            <Button x:Name="btnUserGrid" Content="Пользователи" Background="White" Height="60" Width="251" FontSize="18" Click="btnShop_Click" Canvas.Left="-1"/>
-            <Button x:Name="btnProductGrid" Content="Продукты" Background="White" Height="60" Width="251" Margin="0,65" FontSize="18" Click="btnProductGrid_Click"/>
-            <Canvas Margin="50,425"/>
-        </Canvas>
+        <StackPanel x:Name="SideBar" Grid.Column="0" Grid.Row="1">
+            <Button x:Name="btnUserGrid" Content="Пользователи" Background="White" Height="60" Width="251" FontSize="18" Click="btnShop_Click"/>
+            <Button x:Name="btnProductGrid" Content="Продукты" Background="White" Height="60" Width="251" Margin="0,5,0,0" FontSize="18" Click="btnProductGrid_Click"/>
+            <Button x:Name="btnOrderGrid" Content="Заказы" Background="White" Height="60" Width="251" Margin="0,5" FontSize="18" Click="btnOrderGrid_Click"/>
+        </StackPanel>
         <Canvas Name="TopApp" Grid.Column="1" Grid.Row="0" Background="DarkSlateGray"/>
         <Canvas Name="Logo" Grid.Column="0" Grid.Row="0">
             <Label Content="PANEL" Canvas.Left="44" Canvas.Top="10" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Center" Width="162"/>

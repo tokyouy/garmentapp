@@ -15,27 +15,26 @@ using System.Windows.Shapes;
 namespace garmentapp
 {
     /// <summary>
-    /// Логика взаимодействия для AddEditProduct.xaml
+    /// Логика взаимодействия для AddEditOrder.xaml
     /// </summary>
-    public partial class AddEditProduct : Window
+    public partial class AddEditOrder : Window
     {
-
-        product _currentProduct = new product();
-        public AddEditProduct(product selecteProduct)
+        order _currentOrder = new order();
+        public AddEditOrder(order selecteOrder)
         {
             InitializeComponent();
-            if(selecteProduct != null)
+            if (selecteOrder != null)
             {
-                _currentProduct = selecteProduct;
+                _currentOrder = selecteOrder;
             }
-            DataContext = _currentProduct;
+            DataContext = _currentOrder;
         }
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
-            if(_currentProduct.id == 0)
+            if (_currentOrder.id == 0)
             {
-                garmentEntities.GetContext().product.Add(_currentProduct);
+                garmentEntities.GetContext().order.Add(_currentOrder);
             }
             try
             {
@@ -47,6 +46,5 @@ namespace garmentapp
                 MessageBox.Show(ex.Message);
             }
         }
-
     }
 }

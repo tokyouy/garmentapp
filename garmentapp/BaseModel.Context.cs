@@ -15,6 +15,17 @@ namespace garmentapp
     
     public partial class garmentEntities : DbContext
     {
+
+        public static garmentEntities _context;
+        public static garmentEntities GetContext()
+        {
+            if (_context == null)
+            {
+                _context = new garmentEntities();
+            }
+            return _context;
+        }
+
         public garmentEntities()
             : base("name=garmentEntities")
         {
