@@ -12,16 +12,15 @@ namespace garmentapp
     using System;
     using System.Collections.Generic;
     
-    public partial class users
+    public partial class order
     {
         public int id { get; set; }
-        public string firstName { get; set; }
-        public string secondName { get; set; }
-        public string login { get; set; }
-        public string password { get; set; }
-        public int roleid { get; set; }
+        public Nullable<int> idUser { get; set; }
+        public string brend { get; set; }
+        public string season { get; set; }
+        public int amount { get; set; }
+        public string type { get; set; }
     
-        public virtual order order { get; set; }
-        public virtual role role { get; set; }
+        public virtual users users { get; set; }
     }
 }
