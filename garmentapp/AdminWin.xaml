@@ -16,9 +16,8 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Canvas x:Name="SideBar" Grid.Column="0" Grid.Row="1" Margin="0,25,0,0">
-            <Button x:Name="btnShop" Content="Магазин" Background="White" Height="60" Width="251" Margin="0,5" FontSize="18" Click="btnShop_Click"/>
-            <Button x:Name="btnBasket" Content="Корзина" Background="White" Height="60" Width="251" Margin="0,70" FontSize="18" Click="btnBasket_Click"/>
-            <Button x:Name="btnUserSettings" Content="Настройки" Background="White" Height="60" Width="251" Margin="0,135,0,0" FontSize="18" Click="btnUserSettings_Click"/>
+            <Button x:Name="btnUserGrid" Content="Пользователи" Background="White" Height="60" Width="251" Margin="0,5" FontSize="18" Click="btnShop_Click"/>
+            <Button x:Name="btnProductGrid" Content="Продукты" Background="White" Height="60" Width="251" Margin="0,70" FontSize="18" Click="btnBasket_Click"/>
             <Canvas Margin="50,425">
                 <Label Content="Помощь" Width="123" Height="38" Canvas.Top="-18" Canvas.Left="22" FontSize="18"/>
             </Canvas>
@@ -31,7 +30,7 @@
         </Canvas>
         <Canvas Name="TopApp" Grid.Column="1" Grid.Row="0" Background="DarkSlateGray"/>
         <Canvas Name="Logo" Grid.Column="0" Grid.Row="0">
-            <Label Content="Garment" Canvas.Left="25" Canvas.Top="20" FontSize="50"/>
+            <Label Content="PANEL" Canvas.Left="44" Canvas.Top="18" FontSize="50" HorizontalAlignment="Left" VerticalAlignment="Top" Width="162"/>
         </Canvas>
     </Grid>
 </Window>

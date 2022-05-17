@@ -23,5 +23,10 @@ namespace garmentapp
         {
             InitializeComponent();
         }
+
+        private void btnShop_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
