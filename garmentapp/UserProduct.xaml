@@ -11,10 +11,11 @@
     <Grid>
         <DataGrid Name="dgProducts" AutoGenerateColumns="False" IsReadOnly="True" Grid.Row="0" SelectionChanged="dgProducts_SelectionChanged">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="ID" Binding="{Binding id}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Бренд" Binding="{Binding brend}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Сезон" Binding="{Binding season}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Вид" Binding="{Binding type}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Цвет" Binding="{Binding color}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Количество" Binding="{Binding amount}"></DataGridTextColumn>
             </DataGrid.Columns>
         </DataGrid>
     </Grid>

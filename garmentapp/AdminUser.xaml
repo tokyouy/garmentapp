@@ -33,6 +33,6 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="btnAddProduct" Content="Добавить товар" Height="30" Width="200" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Click="btnAddProduct_Click"/>
+        <Button x:Name="btnAdduser" Content="Добавить пользователя" Height="30" Width="200" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Click="btnAddProduct_Click"/>
     </Grid>
 </Page>
