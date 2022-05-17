@@ -35,7 +35,7 @@ namespace garmentapp
 
         private void btnAppSettings_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Content = new SetingsProfile();
+            // MainFrame.Content = new SetingsProfile();
         }
 
         private void btnCatalog_Click(object sender, RoutedEventArgs e)
