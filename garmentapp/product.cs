@@ -18,7 +18,7 @@ namespace garmentapp
         public string brend { get; set; }
         public string season { get; set; }
         public string color { get; set; }
-        public Nullable<int> amount { get; set; }
+        public int amount { get; set; }
         public string type { get; set; }
     }
 }

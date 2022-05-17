@@ -13,8 +13,8 @@
           <Property Name="brend" Type="nvarchar" MaxLength="16" Nullable="false" />
           <Property Name="season" Type="nvarchar" MaxLength="16" Nullable="false" />
           <Property Name="color" Type="nvarchar" MaxLength="16" Nullable="false" />
-          <Property Name="amount" Type="int" />
-          <Property Name="type" Type="nvarchar" MaxLength="16" />
+          <Property Name="amount" Type="int" Nullable="false" />
+          <Property Name="type" Type="nvarchar" MaxLength="16" Nullable="false" />
         </EntityType>
         <EntityType Name="role">
           <Key>
@@ -79,8 +79,8 @@
           <Property Name="brend" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="season" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="color" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="amount" Type="Int32" />
-          <Property Name="type" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+          <Property Name="amount" Type="Int32" Nullable="false" />
+          <Property Name="type" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
         </EntityType>
         <EntityType Name="role">
           <Key>

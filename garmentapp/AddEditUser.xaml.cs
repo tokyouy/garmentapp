@@ -24,6 +24,7 @@ namespace garmentapp
         {
             InitializeComponent();
             cbRoles.ItemsSource = garmentEntities.GetContext().role.ToList();
+
             if (selectedUsers != null)
             {
                 _currentUser = selectedUsers;
@@ -61,7 +62,6 @@ namespace garmentapp
                 }
             }
         }
-
 
     }
 }

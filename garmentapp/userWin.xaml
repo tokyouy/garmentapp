@@ -15,19 +15,18 @@
             <RowDefinition Height="85"/>
             <RowDefinition/>
         </Grid.RowDefinitions>
+        <Image Source="assets/icon.png" Grid.Column="2" Grid.Row="1"/>
         <Canvas x:Name="SideBar" Grid.Column="0" Grid.Row="1" Margin="0,25,0,0">
-            <Button x:Name="btnShop" Content="Магазин" Background="White" Height="60" Width="251" Margin="0,5" FontSize="18" Click="btnShop_Click"/>
-            <Button x:Name="btnUserSettings" Content="Настройки" Background="White" Height="60" Width="251" Margin="0,70,0,0" FontSize="18" Click="btnUserSettings_Click"/>
+            <Button x:Name="btnShop" Content="Магазин" Background="White" Height="60" Width="251" FontSize="18" Click="btnShop_Click" HorizontalAlignment="Left" Canvas.Top="-25" VerticalAlignment="Top" Canvas.Left="-1"/>
+            <Button x:Name="btnUserSettings" Content="Настройки" Background="White" Height="60" Width="251" FontSize="18" Click="btnUserSettings_Click" HorizontalAlignment="Center" Canvas.Top="40" VerticalAlignment="Top"/>
             <Canvas Margin="50,425">
                 <Label Content="Помощь" Width="123" Height="38" Canvas.Top="-18" Canvas.Left="22" FontSize="18"/>
             </Canvas>
         </Canvas>
-        <Canvas Name="GridPos" Grid.Column="1" Grid.Row="1" Background="DarkSlateGray">
-            <Frame Name="MainFrame" Background="DarkSlateGray" Grid.Row="1" Grid.Column="2" Height="400" Width="900" Margin="15"/>
-        </Canvas>
+        <Frame Name="MainFrame" Grid.Row="1" Grid.Column="2"/>
         <Canvas Name="TopApp" Grid.Column="1" Grid.Row="0" Background="DarkSlateGray"/>
         <Canvas Name="Logo" Grid.Column="0" Grid.Row="0">
-            <Label Content="Garment" Canvas.Left="25" Canvas.Top="20" FontSize="50"/>
+            <Label Content="Garment" Canvas.Left="24" Canvas.Top="10" FontSize="50"/>
         </Canvas>
     </Grid>
 </Window>
