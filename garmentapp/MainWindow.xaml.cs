@@ -22,7 +22,7 @@ namespace garmentapp
     /// </summary>
     public partial class MainWindow : Window
     {
-        user validate = null;
+        users validate = null;
         public MainWindow()
         {
             InitializeComponent();
@@ -32,12 +32,33 @@ namespace garmentapp
         public void ValidateUser(string login, string password)
         {
 
-            validate = garmentEntities.GetContext().users.Where(p => p.login == login && p.password == password).FirstOrDefault();
+            validate = garmentEntities.GetContext().users.Where(p => p.login == login && p.password == password ).FirstOrDefault();
             if (validate != null)
             {
-                userWin Userwin = new userWin();
+                switch (validate.roleid)
+                {   
+                    // admin
+                    case 1:
+                        AdminWin adminWin = new AdminWin();
+                        adminWin.Show();
+                        this.Hide();
+                        break;
+                    // User
+                    case 2:
+                        userWin UserWin = new userWin();
+                        UserWin.Show();
+                        this.Hide();
+                        break;
+                    // Factory
+                    case 3:
+                        facWin FactoryWin = new facWin();
+                        FactoryWin.Show();
+                        this.Hide();
+                        break;
+                }
+                /* userWin Userwin = new userWin();
                 Userwin.Show();
-                this.Hide();
+                this.Hide(); */
             }
             else
             {

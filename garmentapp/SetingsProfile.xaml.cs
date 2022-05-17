@@ -20,8 +20,8 @@ namespace garmentapp
     /// </summary>
     public partial class SetingsProfile : Page
     {
-        user _currentUser = new user();
-        public SetingsProfile(user selectedUser)
+        users _currentUser = new users();
+        public SetingsProfile(users selectedUser)
         {
             InitializeComponent();
             if(selectedUser != null)

@@ -19,11 +19,11 @@ namespace garmentapp
     /// </summary>
     public partial class AddEditUser : Window
     {
-        user _currentUser = new user();
-        public AddEditUser(user selectedUsers)
+        users _currentUser = new users();
+        public AddEditUser(users selectedUsers)
         {
             InitializeComponent();
-            cbRoles.ItemsSource = garmentEntities.GetContext().roles.ToList();
+            cbRoles.ItemsSource = garmentEntities.GetContext().role.ToList();
             if (selectedUsers != null)
             {
                 _currentUser = selectedUsers;

@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="Хранилище garmentModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="Хранилище garmentModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="product">
           <Key>
             <PropertyRef Name="id" />
@@ -65,10 +65,21 @@
             <End Role="users" EntitySet="users" />
           </AssociationSet>
         </EntityContainer>
-      </Schema></edmx:StorageModels>
+      </Schema>
+    </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="garmentModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="product">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="brend" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="season" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="color" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="picture" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+        </EntityType>
         <EntityType Name="role">
           <Key>
             <PropertyRef Name="id" />
@@ -77,7 +88,7 @@
           <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="users" Relationship="Self.FK_user_role" FromRole="role" ToRole="users" />
         </EntityType>
-        <EntityType Name="sysdiagram">
+        <EntityType Name="sysdiagrams">
           <Key>
             <PropertyRef Name="diagram_id" />
           </Key>
@@ -87,7 +98,7 @@
           <Property Name="version" Type="Int32" />
           <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
-        <EntityType Name="user">
+        <EntityType Name="users">
           <Key>
             <PropertyRef Name="id" />
           </Key>
@@ -101,7 +112,7 @@
         </EntityType>
         <Association Name="FK_user_role">
           <End Role="role" Type="Self.role" Multiplicity="1" />
-          <End Role="users" Type="Self.user" Multiplicity="*" />
+          <End Role="users" Type="Self.users" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="role">
               <PropertyRef Name="id" />
@@ -112,32 +123,33 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="garmentEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="roles" EntityType="Self.role" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
-          <EntitySet Name="users" EntityType="Self.user" />
+          <EntitySet Name="product" EntityType="Self.product" />
+          <EntitySet Name="role" EntityType="Self.role" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="users" EntityType="Self.users" />
           <AssociationSet Name="FK_user_role" Association="Self.FK_user_role">
-            <End Role="role" EntitySet="roles" />
+            <End Role="role" EntitySet="role" />
             <End Role="users" EntitySet="users" />
           </AssociationSet>
-          <EntitySet Name="products" EntityType="garmentModel.product" />
         </EntityContainer>
-        <EntityType Name="product">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="Int32" Nullable="false" />
-          <Property Name="brend" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="true" />
-          <Property Name="season" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="true" />
-          <Property Name="color" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="true" />
-          <Property Name="picture" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
-        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="Хранилище garmentModelContainer" CdmEntityContainer="garmentEntities">
-          <EntitySetMapping Name="roles">
+          <EntitySetMapping Name="product">
+            <EntityTypeMapping TypeName="garmentModel.product">
+              <MappingFragment StoreEntitySet="product">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="brend" ColumnName="brend" />
+                <ScalarProperty Name="season" ColumnName="season" />
+                <ScalarProperty Name="color" ColumnName="color" />
+                <ScalarProperty Name="picture" ColumnName="picture" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="role">
             <EntityTypeMapping TypeName="garmentModel.role">
               <MappingFragment StoreEntitySet="role">
                 <ScalarProperty Name="id" ColumnName="id" />
@@ -146,7 +158,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="garmentModel.sysdiagram">
+            <EntityTypeMapping TypeName="garmentModel.sysdiagrams">
               <MappingFragment StoreEntitySet="sysdiagrams">
                 <ScalarProperty Name="name" ColumnName="name" />
                 <ScalarProperty Name="principal_id" ColumnName="principal_id" />
@@ -157,7 +169,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="users">
-            <EntityTypeMapping TypeName="garmentModel.user">
+            <EntityTypeMapping TypeName="garmentModel.users">
               <MappingFragment StoreEntitySet="users">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="firstName" ColumnName="firstName" />
@@ -165,17 +177,6 @@
                 <ScalarProperty Name="login" ColumnName="login" />
                 <ScalarProperty Name="password" ColumnName="password" />
                 <ScalarProperty Name="roleid" ColumnName="roleid" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="products">
-            <EntityTypeMapping TypeName="garmentModel.product">
-              <MappingFragment StoreEntitySet="product">
-                <ScalarProperty Name="picture" ColumnName="picture" />
-                <ScalarProperty Name="color" ColumnName="color" />
-                <ScalarProperty Name="season" ColumnName="season" />
-                <ScalarProperty Name="brend" ColumnName="brend" />
-                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -193,7 +194,7 @@
     <Options>
       <DesignerInfoPropertySet>
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
-        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
         <DesignerProperty Name="UseLegacyProvider" Value="false" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="Нет" />

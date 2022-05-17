@@ -18,7 +18,7 @@ namespace garmentapp
         public static garmentEntities _context;
         public static garmentEntities GetContext()
         {
-            if(_context == null)
+            if (_context == null)
             {
                 _context = new garmentEntities();
             }
@@ -34,9 +34,9 @@ namespace garmentapp
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<role> roles { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
-        public virtual DbSet<user> users { get; set; }
-        public virtual DbSet<product> products { get; set; }
+        public virtual DbSet<product> product { get; set; }
+        public virtual DbSet<role> role { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
+        public virtual DbSet<users> users { get; set; }
     }
 }

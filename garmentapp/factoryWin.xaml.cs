@@ -26,7 +26,7 @@ namespace garmentapp
 
         private void tbSearch_TextChanged(object sender, TextChangedEventArgs e)
         {
-            var product = garmentEntities.GetContext().products.Where(p => p.color == tbSearch.Text).ToList();
+            var product = garmentEntities.GetContext().product.Where(p => p.color == tbSearch.Text).ToList();
             Manger.dgProducts.ItemsSource = product;
         }
     }

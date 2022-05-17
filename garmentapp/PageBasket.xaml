@@ -5,12 +5,13 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:garmentapp"
       mc:Ignorable="d" 
-      d:DesignHeight="1000" d:DesignWidth="1000"
+      d:DesignHeight="500" d:DesignWidth="1000"
       Title="PageBasket" Background="DarkSlateGray">
-
     <Grid>
         <Canvas Name="GridPos" Background="DarkSlateGray">
-            <DataGrid Height="450" Width="900" Canvas.Left="10" Canvas.Top="10" HorizontalAlignment="Center" VerticalAlignment="Top"></DataGrid>
+            <DataGrid Height="450" Width="900" Canvas.Left="10" Canvas.Top="10" HorizontalAlignment="Center" VerticalAlignment="Top">
+                
+            </DataGrid>
         </Canvas>
     </Grid>
 </Page>

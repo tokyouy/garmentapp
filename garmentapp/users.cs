@@ -12,7 +12,7 @@ namespace garmentapp
     using System;
     using System.Collections.Generic;
     
-    public partial class user
+    public partial class users
     {
         public int id { get; set; }
         public string firstName { get; set; }
@@ -20,15 +20,7 @@ namespace garmentapp
         public string login { get; set; }
         public string password { get; set; }
         public int roleid { get; set; }
-
-        public string FullName
-        {
-            get
-            {
-                return $"{firstName} {secondName}";
-            }
-        }
-
+    
         public virtual role role { get; set; }
     }
 }

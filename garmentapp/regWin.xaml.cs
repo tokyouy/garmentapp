@@ -19,7 +19,7 @@ namespace garmentapp
     /// </summary>
     public partial class regWin : Window
     {
-        private user _currentUser = new user();
+        private users _currentUser = new users();
         public regWin()
         {
             InitializeComponent();

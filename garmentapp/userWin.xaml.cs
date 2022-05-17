@@ -22,6 +22,7 @@ namespace garmentapp
         public userWin()
         {
             InitializeComponent();
+
         }
 
         private void btnShop_Click(object sender, RoutedEventArgs e)

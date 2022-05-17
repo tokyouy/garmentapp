@@ -23,7 +23,7 @@ namespace garmentapp
         public AdminProduct()
         {
             InitializeComponent();
-            dgProducts.ItemsSource = garmentEntities.GetContext().products.ToList();
+            dgProducts.ItemsSource = garmentEntities.GetContext().product.ToList();
         }
 
         private void btnEdit_Click(object sender, RoutedEventArgs e)
@@ -37,7 +37,7 @@ namespace garmentapp
             if (MessageBox.Show("Вы уверены что хотите удалить запись?", "Вы уверены?", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
                 var selectedItem = dgProducts.SelectedItem;
-                garmentEntities.GetContext().products.Remove(selectedItem as product);
+                garmentEntities.GetContext().product.Remove(selectedItem as product);
                 try
                 {
                     garmentEntities.GetContext().SaveChanges();

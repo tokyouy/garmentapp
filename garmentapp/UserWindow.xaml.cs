@@ -27,7 +27,7 @@ namespace garmentapp
 
         private void btnEdit_Click(object sender, RoutedEventArgs e)
         {
-            AddEditUser addEditUser = new AddEditUser(dgUsers.SelectedItem as user);
+            AddEditUser addEditUser = new AddEditUser(dgUsers.SelectedItem as users);
             addEditUser.Show();
         }
 
@@ -36,7 +36,7 @@ namespace garmentapp
             if (MessageBox.Show("Вы уверены что хотите удалить запись?", "Вы уверены?", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
                 var selectedItem = dgUsers.SelectedItem;
-                garmentEntities.GetContext().users.Remove(selectedItem as user);
+                garmentEntities.GetContext().users.Remove(selectedItem as users);
                 try
                 {
                     garmentEntities.GetContext().SaveChanges();

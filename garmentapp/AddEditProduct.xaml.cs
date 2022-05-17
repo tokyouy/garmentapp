@@ -34,7 +34,7 @@ namespace garmentapp
         {
             if(_currentProduct.id == 0)
             {
-                garmentEntities.GetContext().products.Add(_currentProduct);
+                garmentEntities.GetContext().product.Add(_currentProduct);
             }
             try
             {

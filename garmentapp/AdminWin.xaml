@@ -29,6 +29,6 @@
         <Canvas Name="Logo" Grid.Column="0" Grid.Row="0">
             <Label Content="PANEL" Canvas.Left="44" Canvas.Top="18" FontSize="50" HorizontalAlignment="Left" VerticalAlignment="Top" Width="162"/>
         </Canvas>
-        <Frame Name="MainFrame" Background="DarkSlateGray" Grid.Row="1" Grid.Column="2" Margin=""/>
+        <Frame Name="MainFrame" Background="DarkSlateGray" Grid.Row="1" Grid.Column="2" Margin="0"/>
     </Grid>
 </Window>

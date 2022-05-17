@@ -23,7 +23,7 @@ namespace garmentapp
         public UserProduct()
         {
             InitializeComponent();
-            dgProducts.ItemsSource = garmentEntities.GetContext().products.ToList();
+            dgProducts.ItemsSource = garmentEntities.GetContext().product.ToList();
             Manger.dgProducts = dgProducts;
         }
 
