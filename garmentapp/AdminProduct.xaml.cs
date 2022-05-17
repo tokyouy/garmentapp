@@ -18,7 +18,7 @@ namespace garmentapp
     /// <summary>
     /// Логика взаимодействия для AdminProduct.xaml
     /// </summary>
-    public partial class AdminProduct : Window
+    public partial class AdminProduct : Page
     {
         public AdminProduct()
         {
