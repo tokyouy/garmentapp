@@ -13,23 +13,18 @@
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="85"/>
-            <RowDefinition/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Grid x:Name="SideBar" Grid.Column="0" Grid.Row="1" Margin="0,25,0,0">
-            <Button x:Name="btnCatalog" Content="Каталог" Background="White" Height="60" Width="251" FontSize="18" Margin="0,-400,0,0"/>
-            <Button x:Name="btnUserSettings" Content="Учетная запись" Background="White" Height="60" Width="251" FontSize="18" Margin="0,-270,0,0"/>
-            <Button x:Name="btnAppSettings" Content="Настройки" Background="White" Height="60" Width="251" FontSize="18" Margin="0,-140,0,0" Click="btnAppSettings_Click"/>
+        <Grid x:Name="SideBar" Grid.Column="0" Grid.Row="1">
+            <Button x:Name="btnCatalog" Content="Каталог" Background="White" Height="60" Width="250" FontSize="18" Margin="0,-420,0,0" Click="btnCatalog_Click"/>
+            <Button x:Name="btnAppSettings" Content="Настройки" Background="White" Height="60" Width="250" FontSize="18" Margin="0,-285,0,0" Click="btnAppSettings_Click"/>
         </Grid>
-        <Canvas Name="GridPos" Grid.Column="1" Grid.Row="1" Background="DarkSlateGray">
-            <DataGrid Height="450" Width="880" Canvas.Left="36" Canvas.Top="10"/>
+        <Canvas Name="TopApp" Grid.Column="1" Grid.Row="0" Background="DarkSlateGray">
+            <TextBox x:Name="tbSearch" Height="30" Width="120" Margin="35,40,0,0" TextChanged="tbSearch_TextChanged"/>
         </Canvas>
-            <Canvas Name="TopApp" Grid.Column="1" Grid.Row="0" Background="DarkSlateGray">
-            <StackPanel>
-                <TextBox x:Name="tbSearch" Height="30" Width="400" Margin="35,40,0,0" TextChanged="tbSearch_TextChanged"/>
-            </StackPanel>
-            </Canvas>
         <Canvas Name="Logo" Grid.Column="0" Grid.Row="0">
-            <Label Content="Factory" Canvas.Left="40" Canvas.Top="20" FontSize="50"/>
+            <Label Content="Factory" Canvas.Left="40" Canvas.Top="10" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Top"/>
         </Canvas>
+        <Frame Name="MainFrame" Grid.Row="1" Grid.Column="2" Grid.ColumnSpan="1" Margin="0"/>
     </Grid>
 </Window>

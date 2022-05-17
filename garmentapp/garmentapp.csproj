@@ -97,6 +97,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BaseModel.edmx</DependentUpon>
     </Compile>
+    <Compile Include="FactoryProduct.xaml.cs">
+      <DependentUpon>FactoryProduct.xaml</DependentUpon>
+    </Compile>
     <Compile Include="factoryWin.xaml.cs">
       <DependentUpon>factoryWin.xaml</DependentUpon>
     </Compile>
@@ -149,6 +152,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AdminWin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FactoryProduct.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

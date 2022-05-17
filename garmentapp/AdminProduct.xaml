@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:garmentapp"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="AdminProduct" Background="White">
+      Title="AdminProduct" Background="DarkSlateGray">
 
     <Grid>
         <Grid.RowDefinitions>
