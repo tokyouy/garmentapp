@@ -39,5 +39,10 @@ namespace garmentapp
         {
             // MainFrame.Content = new SetingsProfile();
         }
+
+        private void btnOrderGrid_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Content = new orderWin();
+        }
     }
 }

@@ -19,6 +19,7 @@
         <StackPanel x:Name="SideBar" Grid.Column="0" Grid.Row="1">
             <Button x:Name="btnCatalog" Content="Каталог" Background="White" Height="60" Width="250" FontSize="18" Margin="0,0,0,0" Click="btnCatalog_Click"/>
             <Button x:Name="btnAppSettings" Content="Настройки" Background="White" Height="60" Width="250" FontSize="18" Margin="0,5,0,0" Click="btnAppSettings_Click"/>
+            <Button x:Name="btnOrderGrid" Content="Заказы" Background="White" Height="60" Width="251" Margin="0,5" FontSize="18" Click="btnOrderGrid_Click"/>
         </StackPanel>
         <Canvas Name="TopApp" Grid.Column="1" Grid.Row="0" Background="DarkSlateGray">
             <TextBox x:Name="tbSearch" Height="30" Width="120" Margin="35,40,0,0" TextChanged="tbSearch_TextChanged" Visibility="Hidden"/>

@@ -7,11 +7,9 @@
         mc:Ignorable="d"
         Title="Garment" Height="450" Width="400" Background="#dadfdf" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" >
     <Grid>
-        <Canvas Grid.Column="0" Grid.Row="0" Background="DarkSlateGray" Margin="0,0,0,300">
-            <StackPanel Grid.Row="0" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Top" Height="135" Width="400">
-                <Label Margin="25" Content="Регистрация" FontSize="50" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Top" Height="80" Canvas.Top="0" Width="302"/>
-            </StackPanel>
-        </Canvas>
+        <StackPanel Grid.Column="0" Grid.Row="0" Background="DarkSlateGray" Margin="0,0,0,300">
+            <Label Margin="25" Content="Регистрация" FontSize="50" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Top" Height="80" Canvas.Top="0" Width="302"/>
+        </StackPanel>
         <StackPanel Margin="0,135,0,0">
             <TextBox x:Name="tbfName" HorizontalAlignment="Center" VerticalAlignment="Top" Height="30" Width="275"
                        Margin="0,40,0,0" Background="#FFFAFAFD" FontSize="18" Text="{Binding firstName}"/>
@@ -21,7 +19,7 @@
                        Margin="0,15,0,0" Background="#FFFAFAFD" FontSize="18" Text="{Binding login}" />
             <TextBox x:Name="tbPassword" HorizontalAlignment="Center" VerticalAlignment="Top" Height="30" Width="275"
                        Margin="0,15,0,0" Background="#FFFAFAFD" FontSize="18" Text="{Binding password}" />
-            <Button Height="25" Width="225" Grid.Row="2" Margin="0,15,0,0" Content="Зарегистрироваться" Click="Button_Click" FontSize="14"/>
+            <Button Height="30" Width="225" Grid.Row="2" Margin="0,15,0,0" Content="Зарегистрироваться" Click="Button_Click" FontSize="18"/>
         </StackPanel>
     </Grid>
 </Window>
