@@ -26,7 +26,7 @@ namespace garmentapp
 
         private void btnShop_Click(object sender, RoutedEventArgs e)
         {
-
+            MainFrame.Content = new UserProduct();
         }
 
         private void btnBasket_Click(object sender, RoutedEventArgs e)

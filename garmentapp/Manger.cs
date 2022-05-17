@@ -10,5 +10,6 @@ namespace garmentapp
     class Manger
     {
         public static DataGrid dgProducts;
+        public static DataGrid frameShop;
     }
 }
