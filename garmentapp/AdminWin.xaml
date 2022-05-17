@@ -19,9 +19,7 @@
         <Canvas x:Name="SideBar" Grid.Column="0" Grid.Row="1">
             <Button x:Name="btnUserGrid" Content="Пользователи" Background="White" Height="60" Width="251" FontSize="18" Click="btnShop_Click" Canvas.Left="-1"/>
             <Button x:Name="btnProductGrid" Content="Продукты" Background="White" Height="60" Width="251" Margin="0,65" FontSize="18" Click="btnProductGrid_Click"/>
-            <Canvas Margin="50,425">
-                <Label Content="Помощь" Width="123" Height="38" Canvas.Top="-18" Canvas.Left="22" FontSize="18"/>
-            </Canvas>
+            <Canvas Margin="50,425"/>
         </Canvas>
         <Canvas Name="TopApp" Grid.Column="1" Grid.Row="0" Background="DarkSlateGray"/>
         <Canvas Name="Logo" Grid.Column="0" Grid.Row="0">
