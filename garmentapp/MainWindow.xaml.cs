@@ -56,9 +56,6 @@ namespace garmentapp
                         this.Hide();
                         break;
                 }
-                /* userWin Userwin = new userWin();
-                Userwin.Show();
-                this.Hide(); */
             }
             else
             {
