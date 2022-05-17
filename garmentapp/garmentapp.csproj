@@ -105,6 +105,9 @@
     </Compile>
     <Compile Include="MainFrame.cs" />
     <Compile Include="Manger.cs" />
+    <Compile Include="order.cs">
+      <DependentUpon>BaseModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="PageBasket.xaml.cs">
       <DependentUpon>PageBasket.xaml</DependentUpon>
     </Compile>
