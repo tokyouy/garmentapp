@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:garmentapp"
         mc:Ignorable="d"
-        Title="Admin/Garment" Height="600" Width="1200" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Background="#dadfdf">
+        Title="Garment: Администратор" Height="600" Width="1200" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Background="#dadfdf">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="250"/>
@@ -25,7 +25,7 @@
         </Canvas>
         <Canvas Name="TopApp" Grid.Column="1" Grid.Row="0" Background="DarkSlateGray"/>
         <Canvas Name="Logo" Grid.Column="0" Grid.Row="0">
-            <Label Content="PANEL" Canvas.Left="44" Canvas.Top="10" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Top" Width="162"/>
+            <Label Content="PANEL" Canvas.Left="44" Canvas.Top="10" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Center" Width="162"/>
         </Canvas>
         <Frame Name="MainFrame" Grid.Row="1" Grid.Column="2" Margin="0"/>
     </Grid>
