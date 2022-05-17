@@ -8,7 +8,7 @@
         Title="Garment" Height="450" Width="400" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" Background="#dadfdf">
     <Grid Height="434" VerticalAlignment="Top">
         <Grid.RowDefinitions>
-            <RowDefinition Height="141*"/>
+            <RowDefinition Height="125"/>
             <RowDefinition Height="171*"/>
             <RowDefinition Height="122*"/>
         </Grid.RowDefinitions>
