@@ -11,5 +11,6 @@ namespace garmentapp
     {
         public static DataGrid dgProducts;
         public static DataGrid dgOrders;
+        public static users validateUser;
     }
 }

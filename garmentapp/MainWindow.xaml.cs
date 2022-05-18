@@ -35,6 +35,7 @@ namespace garmentapp
             validate = garmentEntities.GetContext().users.Where(p => p.login == login && p.password == password ).FirstOrDefault();
             if (validate != null)
             {
+                Manger.validateUser = validate;
                 switch (validate.roleid)
                 {   
                     // admin

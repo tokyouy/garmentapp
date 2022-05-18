@@ -32,6 +32,7 @@ namespace garmentapp
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
+            _currentOrder.idUser = Manger.validateUser.id;
             if (_currentOrder.id == 0)
             {
                 garmentEntities.GetContext().order.Add(_currentOrder);

@@ -37,15 +37,9 @@ namespace garmentapp
             {
                 garmentEntities.GetContext().product.Add(_currentProduct);
             }
-            try
-            {
-                garmentEntities.GetContext().SaveChanges();
-            }
-            catch (Exception ex)
-            {
 
-                MessageBox.Show(ex.Message);
-            }
+                garmentEntities.GetContext().SaveChanges();
+            
         }
 
     }

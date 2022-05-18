@@ -33,8 +33,7 @@
             </DataGrid.Columns>
         </DataGrid>
         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Button x:Name="btnAdd" Content="Добавить" Height="30" Width="100" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,10,0"/>
-            <Button x:Name="btnOut" Content="Выйти" Height="30" Width="100" VerticalAlignment="Center" HorizontalAlignment="Center" />
+            <Button x:Name="btnAdd" Content="Добавить продукт" Height="30" Width="130" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,10,0"/>
         </StackPanel>
     </Grid>
 </Page>

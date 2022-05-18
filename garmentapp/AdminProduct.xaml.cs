@@ -61,5 +61,10 @@ namespace garmentapp
             AddEditProduct addEditProduct = new AddEditProduct(dgProducts.SelectedItem as product);
             addEditProduct.Show();
         }
+
+        private void btnOut_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
