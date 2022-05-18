@@ -28,7 +28,6 @@ namespace garmentapp
             InitializeComponent();
         }
 
-        
         public void ValidateUser(string login, string password)
         {
 
@@ -38,19 +37,19 @@ namespace garmentapp
                 Manger.validateUser = validate;
                 switch (validate.roleid)
                 {   
-                    // admin
+                    // adminWin
                     case 1:
                         AdminWin adminWin = new AdminWin();
                         adminWin.Show();
                         this.Hide();
                         break;
-                    // User
+                    // UserWin
                     case 2:
                         userWin UserWin = new userWin();
                         UserWin.Show();
                         this.Hide();
                         break;
-                    // Factory
+                    // FactoryWin
                     case 3:
                         facWin FactoryWin = new facWin();
                         FactoryWin.Show();
