@@ -20,6 +20,8 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
+        <Canvas Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Background="FloralWhite"></Canvas>
+
         <TextBlock Text="Фамилия" VerticalAlignment="Center" FontSize="18" HorizontalAlignment="Center" Grid.Row="0" Grid.Column="0" />
         <TextBlock Text="Имя" VerticalAlignment="Center" FontSize="18" HorizontalAlignment="Center" Grid.Row="1" Grid.Column="0"/>
         <TextBlock Text="Логин" VerticalAlignment="Center" FontSize="18" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="0" />
