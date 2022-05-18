@@ -9,11 +9,11 @@
       Title="AdminUser" Background="White">
 
     <Grid>
-        <Canvas Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Background="DarkSlateGray"/>
         <Grid.RowDefinitions>
             <RowDefinition Height="133*"/>
             <RowDefinition Height="17*"/>
         </Grid.RowDefinitions>
+        <Canvas Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Background="DarkSlateGray"/>
         <DataGrid Name="dgUsers" AutoGenerateColumns="False" IsReadOnly="True" Grid.Row="0">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding id}"></DataGridTextColumn>

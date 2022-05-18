@@ -7,7 +7,6 @@
         mc:Ignorable="d"
         Title="Пользователи" Height="450" Width="800" ResizeMode="NoResize">
     <Grid>
-        <Canvas Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Background="DarkSlateGray"/>
         <Grid.RowDefinitions>
             <RowDefinition Height="383*"/>
             <RowDefinition Height="36*"/>
@@ -32,6 +31,7 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
+        <Canvas Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Background="DarkSlateGray"/>
         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Button x:Name="btnAdd" Content="Добавить" Height="30" Width="100" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,10,0" Click="btnAdd_Click"/>
             <Button x:Name="btnOut" Content="Выйти" Height="30" Width="100" VerticalAlignment="Center" HorizontalAlignment="Center" Click="btnOut_Click" />

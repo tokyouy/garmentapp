@@ -22,7 +22,7 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" Nullable="false" />
-          <Property Name="brend" Type="nvarchar" MaxLength="16" Nullable="false" />
+          <Property Name="brend" Type="nvarchar" MaxLength="16" />
           <Property Name="season" Type="nvarchar" MaxLength="16" Nullable="false" />
           <Property Name="color" Type="nvarchar" MaxLength="16" Nullable="false" />
           <Property Name="amount" Type="int" Nullable="false" />
@@ -118,7 +118,7 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" />
-          <Property Name="brend" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="brend" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
           <Property Name="season" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="color" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="amount" Type="Int32" Nullable="false" />
