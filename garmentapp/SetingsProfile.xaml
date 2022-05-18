@@ -8,6 +8,7 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="SetingsProfile" Background="White">
     <Grid>
+        <Canvas Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2" Background="DarkSlateGray"/>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>

@@ -9,6 +9,7 @@
       Title="AdminUser" Background="White">
 
     <Grid>
+        <Canvas Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Background="DarkSlateGray"/>
         <Grid.RowDefinitions>
             <RowDefinition Height="133*"/>
             <RowDefinition Height="17*"/>

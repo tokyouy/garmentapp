@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="Пользователи" Height="450" Width="800" ResizeMode="NoResize">
     <Grid>
+        <Canvas Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Background="DarkSlateGray"/>
         <Grid.RowDefinitions>
             <RowDefinition Height="383*"/>
             <RowDefinition Height="36*"/>
