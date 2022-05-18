@@ -24,6 +24,7 @@ namespace garmentapp
         {
             InitializeComponent();
             dgOrders.ItemsSource = garmentEntities.GetContext().order.ToList();
+            Manger.dgOrders = dgOrders;
         }
 
         private void btnAddOrder_Click(object sender, RoutedEventArgs e)
@@ -34,8 +35,8 @@ namespace garmentapp
 
         private void btnEdit_Click(object sender, RoutedEventArgs e)
         {
-            AddEditProduct addEditProduct = new AddEditProduct(null);
-            addEditProduct.Show();
+            AddEditOrder addEditOrder = new AddEditOrder(dgOrders.SelectedItem as order);
+            addEditOrder.Show();
         }
 
         private void btnDelate_Click(object sender, RoutedEventArgs e)

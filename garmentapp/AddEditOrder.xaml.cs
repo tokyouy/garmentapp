@@ -40,12 +40,14 @@ namespace garmentapp
             try
             {
                 garmentEntities.GetContext().SaveChanges();
-            }
+                Manger.dgOrders.ItemsSource = garmentEntities.GetContext().order.ToList();
+                MessageBox.Show("Данные сохранены!");
+        }
             catch (Exception ex)
             {
 
                 MessageBox.Show(ex.Message);
             }
-        }
+}
     }
 }
