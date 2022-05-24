@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:garmentapp"
         mc:Ignorable="d"
-        Title="Garment" Height="500" Width="450" Background="#dadfdf" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" >
+        Title="Garment" Height="500" Width="450" Background="#dadfdf" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Icon="/Assets/icon.png" >
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="125"/>
