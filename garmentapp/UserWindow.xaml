@@ -5,13 +5,20 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:garmentapp"
         mc:Ignorable="d"
-        Title="Пользователи" Height="450" Width="800" ResizeMode="NoResize">
+        Title="Пользователи" Height="450" Width="800" ResizeMode="NoResize" Background="#dadfdf">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="383*"/>
-            <RowDefinition Height="36*"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="133*"/>
+            <RowDefinition Height="17*"/>
         </Grid.RowDefinitions>
-        <DataGrid Name="dgUsers" AutoGenerateColumns="False" IsReadOnly="True">
+        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Left">
+            <TextBox x:Name="searchbrend" Width="100" Margin="20,30,0,10" TextChanged="searchbrend_TextChanged"></TextBox>
+            <TextBox x:Name="searchseason" Width="100" Margin="20,30,0,10" TextChanged="searchseason_TextChanged"></TextBox>
+            <TextBox x:Name="searchcolor" Width="100" Margin="20,30,0,10" TextChanged="searchcolor_TextChanged"></TextBox>
+            <TextBox x:Name="searchtype" Width="100" Margin="20,30,0,10" TextChanged="searchtype_TextChanged"></TextBox>
+        </StackPanel>
+        <DataGrid Grid.Row="1" Name="dgUsers" AutoGenerateColumns="False" IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding id}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Имя" Binding="{Binding firstName}"></DataGridTextColumn>
@@ -31,8 +38,7 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <Canvas Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Background="DarkSlateGray"/>
-        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Button x:Name="btnAdd" Content="Добавить" Height="30" Width="100" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,10,0" Click="btnAdd_Click"/>
             <Button x:Name="btnOut" Content="Выйти" Height="30" Width="100" VerticalAlignment="Center" HorizontalAlignment="Center" Click="btnOut_Click" />
         </StackPanel>

@@ -6,10 +6,19 @@
       xmlns:local="clr-namespace:garmentapp"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="UserProduct" Background="White">
-
+      Title="UserProduct" Background="#dadfdf">
     <Grid>
-        <DataGrid Name="dgProducts" AutoGenerateColumns="False" IsReadOnly="True" Grid.Row="0" SelectionChanged="dgProducts_SelectionChanged">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="133*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Left">
+            <TextBox x:Name="searchbrend" Width="100" Margin="20,30,0,10" TextChanged="searchbrend_TextChanged"></TextBox>
+            <TextBox x:Name="searchseason" Width="100" Margin="20,30,0,10" TextChanged="searchseason_TextChanged"></TextBox>
+            <TextBox x:Name="searchcolor" Width="100" Margin="20,30,0,10" TextChanged="searchcolor_TextChanged"></TextBox>
+            <TextBox x:Name="searchtype" Width="100" Margin="20,30,0,10" TextChanged="searchtype_TextChanged"></TextBox>
+        </StackPanel>
+        <DataGrid Name="dgProducts" AutoGenerateColumns="False" IsReadOnly="True" Grid.Row="1" SelectionChanged="dgProducts_SelectionChanged">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Бренд" Binding="{Binding brend}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Сезон" Binding="{Binding season}"></DataGridTextColumn>
