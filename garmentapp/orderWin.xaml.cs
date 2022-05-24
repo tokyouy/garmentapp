@@ -56,5 +56,23 @@ namespace garmentapp
                 }
             }
         }
+
+        private void searchseason_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            var garment = garmentEntities.GetContext().order.Where(p => p.season.Contains(searchseason.Text)).ToList();
+            dgOrders.ItemsSource = garment;
+        }
+
+        private void searchcolor_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            var garment = garmentEntities.GetContext().order.Where(p => p.color.Contains(searchseason.Text)).ToList();
+            dgOrders.ItemsSource = garment;
+        }
+
+        private void searchtype_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            var garment = garmentEntities.GetContext().order.Where(p => p.type.Contains(searchseason.Text)).ToList();
+            dgOrders.ItemsSource = garment;
+        }
     }
 }
