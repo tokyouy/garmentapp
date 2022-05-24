@@ -26,6 +26,7 @@ namespace garmentapp
 
         private void btnShop_Click(object sender, RoutedEventArgs e)
         {
+            //MainFrame.Content = new UserWindow();
             UserWindow userWind = new UserWindow();
             userWind.Show();
         }
