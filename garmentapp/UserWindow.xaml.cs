@@ -62,7 +62,7 @@ namespace garmentapp
 
         private void btnOut_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Hide();
         }
 
         private void searchbrend_TextChanged(object sender, TextChangedEventArgs e)

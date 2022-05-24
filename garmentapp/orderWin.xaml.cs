@@ -29,7 +29,7 @@ namespace garmentapp
 
         private void btnAddOrder_Click(object sender, RoutedEventArgs e)
         {
-            AddEditOrder addEditOrder = new AddEditOrder(dgOrders.SelectedItem as order);
+            AddEditOrder addEditOrder = new AddEditOrder(null);
             addEditOrder.Show();
         }
 

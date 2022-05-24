@@ -114,6 +114,9 @@
     <Compile Include="orderFactory.xaml.cs">
       <DependentUpon>orderFactory.xaml</DependentUpon>
     </Compile>
+    <Compile Include="orderUser.xaml.cs">
+      <DependentUpon>orderUser.xaml</DependentUpon>
+    </Compile>
     <Compile Include="orderWin.xaml.cs">
       <DependentUpon>orderWin.xaml</DependentUpon>
     </Compile>
@@ -189,6 +192,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="orderFactory.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="orderUser.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
