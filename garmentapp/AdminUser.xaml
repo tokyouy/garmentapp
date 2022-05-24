@@ -6,15 +6,18 @@
       xmlns:local="clr-namespace:garmentapp"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="AdminUser" Background="White">
+      Title="AdminUser" Background="#dadfdf">
 
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
             <RowDefinition Height="133*"/>
             <RowDefinition Height="17*"/>
         </Grid.RowDefinitions>
-        <Canvas Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Background="DarkSlateGray"/>
-        <DataGrid Name="dgUsers" AutoGenerateColumns="False" IsReadOnly="True" Grid.Row="0">
+        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Left">
+            <TextBox x:Name="searchlogin" Width="100" Margin="20,30,0,10" TextChanged="searchbrend_TextChanged"></TextBox>
+        </StackPanel>
+        <DataGrid Name="dgUsers" AutoGenerateColumns="False" IsReadOnly="True" Grid.Row="1">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding id}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Имя" Binding="{Binding firstName}"></DataGridTextColumn>
@@ -34,6 +37,6 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="btnAdduser" Content="Добавить пользователя" Height="30" Width="200" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="1" Click="btnAddProduct_Click"/>
+        <Button x:Name="btnAdduser" Content="Добавить пользователя" Height="30" Width="200" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Click="btnAddProduct_Click"/>
     </Grid>
 </Page>

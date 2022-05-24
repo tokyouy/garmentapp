@@ -6,13 +6,20 @@
       xmlns:local="clr-namespace:garmentapp"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Продукты" Background="DarkSlateGray">
+      Title="Продукты" Background="#dadfdf">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="383*"/>
-            <RowDefinition Height="36*"/>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="133*"/>
+            <RowDefinition Height="17*"/>
         </Grid.RowDefinitions>
-        <DataGrid Name="dgProducts" AutoGenerateColumns="False" IsReadOnly="True">
+        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Left">
+            <TextBox x:Name="searchbrend" Width="100" Margin="20,30,0,10" TextChanged="searchbrend_TextChanged"></TextBox>
+            <TextBox x:Name="searchseason" Width="100" Margin="20,30,0,10" TextChanged="searchseason_TextChanged"></TextBox>
+            <TextBox x:Name="searchcolor" Width="100" Margin="20,30,0,10" TextChanged="searchcolor_TextChanged"></TextBox>
+            <TextBox x:Name="searchtype" Width="100" Margin="20,30,0,10" TextChanged="searchtype_TextChanged"></TextBox>
+        </StackPanel>
+        <DataGrid Grid.Row="1" Name="dgProducts" AutoGenerateColumns="False" IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding id}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Бренд" Binding="{Binding brend}"></DataGridTextColumn>
@@ -32,7 +39,7 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
             <Button x:Name="btnAdd" Content="Добавить продукт" Height="30" Width="130" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,10,0"/>
         </StackPanel>
     </Grid>

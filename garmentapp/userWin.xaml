@@ -21,10 +21,10 @@
             <Button x:Name="btnUserSettings" Content="Настройки" Background="White" Height="60" Width="250" Margin="0,5,0,0" FontSize="18" Click="btnUserSettings_Click" HorizontalAlignment="Center" VerticalAlignment="Top"/>
             <Button x:Name="btnOrderGrid" Content="Заказы" Background="White" Height="60" Width="250" Margin="0,5,0,0" FontSize="18" Click="btnOrderGrid_Click"/>
         </StackPanel>
-        <Frame Name="MainFrame" Grid.Row="1" Grid.Column="2"/>
+        <Frame NavigationUIVisibility="Hidden" Name="MainFrame" Grid.Row="1" Grid.Column="2"/>
         <Canvas Name="TopApp" Grid.Column="1" Grid.Row="0" Background="DarkSlateGray"/>
         <Canvas Name="Logo" Grid.Column="0" Grid.Row="0" Background="DarkSlateGray">
-            <Label Content="Garment" Canvas.Left="24" Canvas.Top="10" FontSize="50" Foreground="White"/>
+            <Label Content="GARMENT" Canvas.Left="5" Canvas.Top="10" FontSize="50" Foreground="White"/>
         </Canvas>
     </Grid>
 </Window>
