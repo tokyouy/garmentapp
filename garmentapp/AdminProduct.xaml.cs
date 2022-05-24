@@ -90,5 +90,11 @@ namespace garmentapp
             var garment = garmentEntities.GetContext().product.Where(p => p.type.Contains(searchtype.Text)).ToList();
             dgProducts.ItemsSource = garment;
         }
+
+        private void btnAdd_Click_1(object sender, RoutedEventArgs e)
+        {
+            AddEditProduct addEditProduct = new AddEditProduct(null);
+            addEditProduct.Show();
+        }
     }
 }
