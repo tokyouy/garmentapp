@@ -56,5 +56,28 @@ namespace garmentapp
             addEditProduct.Show();
         }
 
+        private void searchbrend_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            var garment = garmentEntities.GetContext().product.Where(p => p.brend.Contains(searchbrend.Text)).ToList();
+            dgProducts.ItemsSource = garment;
+        }
+
+        private void searchseason_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            var garment = garmentEntities.GetContext().product.Where(p => p.season.Contains(searchseason.Text)).ToList();
+            dgProducts.ItemsSource = garment;
+        }
+
+        private void searchcolor_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            var garment = garmentEntities.GetContext().product.Where(p => p.color.Contains(searchcolor.Text)).ToList();
+            dgProducts.ItemsSource = garment;
+        }
+
+        private void searchtype_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            var garment = garmentEntities.GetContext().product.Where(p => p.type.Contains(searchtype.Text)).ToList();
+            dgProducts.ItemsSource = garment;
+        }
     }
 }

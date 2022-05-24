@@ -64,5 +64,11 @@ namespace garmentapp
         {
 
         }
+
+        private void searchbrend_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            var garment = garmentEntities.GetContext().users.Where(p => p.login.Contains(searchlogin.Text)).ToList();
+            dgUsers.ItemsSource = garment;
+        }
     }
 }

@@ -13,10 +13,10 @@
             <RowDefinition Height="17*"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Left">
-            <TextBox x:Name="searchbrend" Width="100" Margin="20,30,0,10" TextChanged="searchbrend_TextChanged"></TextBox>
-            <TextBox x:Name="searchseason" Width="100" Margin="20,30,0,10" TextChanged="searchseason_TextChanged"></TextBox>
-            <TextBox x:Name="searchcolor" Width="100" Margin="20,30,0,10" TextChanged="searchcolor_TextChanged"></TextBox>
-            <TextBox x:Name="searchtype" Width="100" Margin="20,30,0,10" TextChanged="searchtype_TextChanged"></TextBox>
+            <Label Content="Логин" Margin="15,5,0,0" Width="100" Foreground="Black"></Label>
+        </StackPanel>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Left">
+            <TextBox x:Name="searchlogin" Width="100" Margin="20,30,0,10" TextChanged="searchbrend_TextChanged"></TextBox>
         </StackPanel>
         <DataGrid Grid.Row="1" Name="dgUsers" AutoGenerateColumns="False" IsReadOnly="True">
             <DataGrid.Columns>

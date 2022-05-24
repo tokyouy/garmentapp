@@ -14,6 +14,9 @@
             <RowDefinition Height="17*"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Left">
+            <Label Content="Логин" Margin="15,5,0,0" Width="100" Foreground="Black"></Label>
+        </StackPanel>
+        <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Left">
             <TextBox x:Name="searchlogin" Width="100" Margin="20,30,0,10" TextChanged="searchbrend_TextChanged"></TextBox>
         </StackPanel>
         <DataGrid Name="dgUsers" AutoGenerateColumns="False" IsReadOnly="True" Grid.Row="1">
