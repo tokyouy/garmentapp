@@ -56,15 +56,15 @@
           <Property Name="password" Type="nvarchar" MaxLength="16" Nullable="false" />
           <Property Name="roleid" Type="int" Nullable="false" />
         </EntityType>
-        <Association Name="FK_order_users1">
-          <End Role="users" Type="Self.users" Multiplicity="0..1" />
-          <End Role="order" Type="Self.order" Multiplicity="*" />
+        <Association Name="FK_order_users">
+          <End Role="users" Type="Self.users" Multiplicity="1" />
+          <End Role="order" Type="Self.order" Multiplicity="0..1" />
           <ReferentialConstraint>
             <Principal Role="users">
               <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="order">
-              <PropertyRef Name="idUser" />
+              <PropertyRef Name="id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -86,7 +86,7 @@
           <EntitySet Name="role" EntityType="Self.role" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_order_users1" Association="Self.FK_order_users1">
+          <AssociationSet Name="FK_order_users" Association="Self.FK_order_users">
             <End Role="users" EntitySet="users" />
             <End Role="order" EntitySet="order" />
           </AssociationSet>
@@ -111,7 +111,7 @@
           <Property Name="amount" Type="Int32" Nullable="false" />
           <Property Name="type" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="color" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="users" Relationship="Self.FK_order_users1" FromRole="order" ToRole="users" />
+          <NavigationProperty Name="users" Relationship="Self.FK_order_users" FromRole="order" ToRole="users" />
         </EntityType>
         <EntityType Name="product">
           <Key>
@@ -152,18 +152,18 @@
           <Property Name="login" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="password" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="roleid" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="order" Relationship="Self.FK_order_users1" FromRole="users" ToRole="order" />
+          <NavigationProperty Name="order" Relationship="Self.FK_order_users" FromRole="users" ToRole="order" />
           <NavigationProperty Name="role" Relationship="Self.FK_user_role" FromRole="users" ToRole="role" />
         </EntityType>
-        <Association Name="FK_order_users1">
-          <End Role="users" Type="Self.users" Multiplicity="0..1" />
-          <End Role="order" Type="Self.order" Multiplicity="*" />
+        <Association Name="FK_order_users">
+          <End Role="users" Type="Self.users" Multiplicity="1" />
+          <End Role="order" Type="Self.order" Multiplicity="0..1" />
           <ReferentialConstraint>
             <Principal Role="users">
               <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="order">
-              <PropertyRef Name="idUser" />
+              <PropertyRef Name="id" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -185,7 +185,7 @@
           <EntitySet Name="role" EntityType="Self.role" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="users" EntityType="Self.users" />
-          <AssociationSet Name="FK_order_users1" Association="Self.FK_order_users1">
+          <AssociationSet Name="FK_order_users" Association="Self.FK_order_users">
             <End Role="users" EntitySet="users" />
             <End Role="order" EntitySet="order" />
           </AssociationSet>

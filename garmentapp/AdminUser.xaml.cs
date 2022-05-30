@@ -28,7 +28,7 @@ namespace garmentapp
 
         private void btnEdit_Click(object sender, RoutedEventArgs e)
         {
-            AddEditUser addEditUser = new AddEditUser(null);
+            AddEditUser addEditUser = new AddEditUser(dgUsers.SelectedItem as users);
             addEditUser.Show();
         }
 
@@ -52,7 +52,7 @@ namespace garmentapp
 
         private void btnAddProduct_Click(object sender, RoutedEventArgs e)
         {
-            AddEditUser addEditUser = new AddEditUser(dgUsers.SelectedItem as users);
+            AddEditUser addEditUser = new AddEditUser(null);
             addEditUser.Show();
         }
 
