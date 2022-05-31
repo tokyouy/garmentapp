@@ -20,8 +20,6 @@
                 <Button Margin="10,0,0,4" Height="60" Width="200"/>
                 <Button Margin="10,0,0,4" Height="60" Width="200"/>
                 <Button Margin="10,0,0,4" Height="60" Width="200"/>
-                <Button Margin="10,0,0,4" Height="60" Width="200"/>
-                <Button Margin="10,0,0,4" Height="60" Width="200"/>
             </StackPanel>
         </Grid>
     </Grid>
