@@ -16,14 +16,11 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
         <Image Source="assets/icon.png" Grid.Column="2" Grid.Row="1"/>
-        <StackPanel Name="SideBar" Grid.Column="0" Grid.Row="1" Margin="0,0,0,0" >
-            <Button x:Name="btnuserLogin" Content="Вход" Background="White" Height="60" Width="250" FontSize="18" HorizontalAlignment="Left" VerticalAlignment="Top" Click="btnuserLogin_Click" />
-            <Button x:Name="btnUserRegistration" Content="Регистрация" Background="White" Height="60" Width="250" Margin="0,5,0,0" FontSize="18" HorizontalAlignment="Center" VerticalAlignment="Top" Click="btnUserRegistration_Click"/>
-        </StackPanel>
-        <Frame NavigationUIVisibility="Hidden" Name="MainFrame" Grid.Row="1" Grid.Column="2"/>
-        <Canvas Name="TopApp" Grid.Column="1" Grid.Row="0" Background="DarkSlateGray"/>
-        <Canvas Name="Logo" Grid.Column="0" Grid.Row="0" Background="DarkSlateGray">
+        <Frame NavigationUIVisibility="Hidden" Name="MainFrame" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"/>
+        <Canvas Name="Logo" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" Background="DarkSlateGray">
             <Label Content="Guest" Canvas.Left="50" Canvas.Top="10" FontSize="50" Foreground="White"/>
         </Canvas>
+        <Button x:Name="btnuserLogin" Content="Вход" Background="White" Height="50" Width="200" FontSize="18" Click="btnuserLogin_Click" Grid.Row="0" Grid.Column="1" Margin="150,0,0,0"/>
+        <Button x:Name="btnUserRegistration" Content="Регистрация" Background="White" Height="50" Width="200" FontSize="18" Click="btnUserRegistration_Click" Grid.Row="0" Grid.Column="1" Margin="600,0,0,0"/>
     </Grid>
 </Window>
