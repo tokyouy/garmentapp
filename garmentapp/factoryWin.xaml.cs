@@ -40,7 +40,7 @@ namespace garmentapp
 
         private void btnCatalog_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Content = new FactoryProduct();
+            MainFrame.Content = new catalog();
         }
 
         private void btnOrderGrid_Click(object sender, RoutedEventArgs e)

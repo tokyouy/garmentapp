@@ -85,11 +85,17 @@
     <Compile Include="AdminWin.xaml.cs">
       <DependentUpon>AdminWin.xaml</DependentUpon>
     </Compile>
+    <Compile Include="catalog.xaml.cs">
+      <DependentUpon>catalog.xaml</DependentUpon>
+    </Compile>
     <Compile Include="FactoryProduct.xaml.cs">
       <DependentUpon>FactoryProduct.xaml</DependentUpon>
     </Compile>
     <Compile Include="factoryWin.xaml.cs">
       <DependentUpon>factoryWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GuestWin.xaml.cs">
+      <DependentUpon>GuestWin.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainFrame.cs" />
     <Compile Include="Manger.cs" />
@@ -171,11 +177,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="catalog.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="FactoryProduct.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="factoryWin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GuestWin.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

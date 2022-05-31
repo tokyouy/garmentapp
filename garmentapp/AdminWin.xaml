@@ -19,7 +19,7 @@
         <StackPanel x:Name="SideBar" Grid.Column="0" Grid.Row="1">
             <Button x:Name="btnUserGrid" Content="Пользователи" Background="White" Height="60" Width="250" FontSize="18" Click="btnShop_Click"/>
             <Button x:Name="btnProductGrid" Content="Каталог" Background="White" Height="60" Width="250" Margin="0,5,0,0" FontSize="18" Click="btnProductGrid_Click"/>
-            <Button x:Name="btnOrderGrid" Content="Заказы" Background="White" Height="60" Width="250" Margin="0,5" FontSize="18" Click="btnOrderGrid_Click"/>
+            <Button x:Name="btnOrderGrid" Content="Заказы" Background="White" Height="60" Width="250" Margin="0,5" FontSize="18" Click="btnOrderGrid_Click" Visibility="Hidden"/>
         </StackPanel>
         <Canvas Name="TopApp" Grid.Column="1" Grid.Row="0" Background="DarkSlateGray"/>
         <Canvas Name="Logo" Grid.Column="0" Grid.Row="0" Background="DarkSlateGray">
