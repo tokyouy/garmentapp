@@ -5,35 +5,43 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
       <Schema Namespace="Хранилище garmentModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="genretb">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="genrename" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
         <EntityType Name="order">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="idUser" Type="int" />
-          <Property Name="brend" Type="nvarchar" MaxLength="16" />
-          <Property Name="season" Type="nvarchar" MaxLength="16" Nullable="false" />
+          <Property Name="brend" Type="nvarchar" MaxLength="50" />
+          <Property Name="type" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="season" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="color" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="amount" Type="int" Nullable="false" />
-          <Property Name="type" Type="nvarchar" MaxLength="16" Nullable="false" />
-          <Property Name="color" Type="nvarchar" MaxLength="16" Nullable="false" />
         </EntityType>
         <EntityType Name="product">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
-          <Property Name="brend" Type="nvarchar" MaxLength="16" />
-          <Property Name="season" Type="nvarchar" MaxLength="16" Nullable="false" />
-          <Property Name="color" Type="nvarchar" MaxLength="16" Nullable="false" />
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="brend" Type="nchar" MaxLength="10" />
+          <Property Name="type" Type="int" Nullable="false" />
+          <Property Name="genre" Type="int" Nullable="false" />
+          <Property Name="season" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="color" Type="nchar" MaxLength="10" Nullable="false" />
           <Property Name="amount" Type="int" Nullable="false" />
-          <Property Name="type" Type="nvarchar" MaxLength="16" Nullable="false" />
         </EntityType>
         <EntityType Name="role">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="name" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="name" Type="nchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -45,30 +53,61 @@
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
-        <EntityType Name="users">
+        <EntityType Name="typeprod">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="firstName" Type="nvarchar" MaxLength="16" Nullable="false" />
-          <Property Name="secondName" Type="nvarchar" MaxLength="16" Nullable="false" />
-          <Property Name="login" Type="nvarchar" MaxLength="16" Nullable="false" />
-          <Property Name="password" Type="nvarchar" MaxLength="16" Nullable="false" />
-          <Property Name="roleid" Type="int" Nullable="false" />
+          <Property Name="typeProduct" Type="nvarchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="users">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="firstName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="secondName" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="login" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="password" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="roleid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <Association Name="FK_order_users">
-          <End Role="users" Type="Self.users" Multiplicity="1" />
-          <End Role="order" Type="Self.order" Multiplicity="0..1" />
+          <End Role="users" Type="Self.users" Multiplicity="0..1" />
+          <End Role="order" Type="Self.order" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="users">
               <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="order">
-              <PropertyRef Name="id" />
+              <PropertyRef Name="idUser" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_user_role">
+        <Association Name="FK_product_genretb">
+          <End Role="genretb" Type="Self.genretb" Multiplicity="1" />
+          <End Role="product" Type="Self.product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="genretb">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="product">
+              <PropertyRef Name="genre" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_product_typeprod">
+          <End Role="typeprod" Type="Self.typeprod" Multiplicity="1" />
+          <End Role="product" Type="Self.product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="typeprod">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="product">
+              <PropertyRef Name="type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_users_role">
           <End Role="role" Type="Self.role" Multiplicity="1" />
           <End Role="users" Type="Self.users" Multiplicity="*" />
           <ReferentialConstraint>
@@ -81,16 +120,26 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="Хранилище garmentModelContainer">
+          <EntitySet Name="genretb" EntityType="Self.genretb" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="order" EntityType="Self.order" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="product" EntityType="Self.product" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="role" EntityType="Self.role" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="typeprod" EntityType="Self.typeprod" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_order_users" Association="Self.FK_order_users">
             <End Role="users" EntitySet="users" />
             <End Role="order" EntitySet="order" />
           </AssociationSet>
-          <AssociationSet Name="FK_user_role" Association="Self.FK_user_role">
+          <AssociationSet Name="FK_product_genretb" Association="Self.FK_product_genretb">
+            <End Role="genretb" EntitySet="genretb" />
+            <End Role="product" EntitySet="product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_product_typeprod" Association="Self.FK_product_typeprod">
+            <End Role="typeprod" EntitySet="typeprod" />
+            <End Role="product" EntitySet="product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_users_role" Association="Self.FK_users_role">
             <End Role="role" EntitySet="role" />
             <End Role="users" EntitySet="users" />
           </AssociationSet>
@@ -100,37 +149,48 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="garmentModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="genretb">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="genrename" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="product" Relationship="Self.FK_product_genretb" FromRole="genretb" ToRole="product" />
+        </EntityType>
         <EntityType Name="order">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="idUser" Type="Int32" />
-          <Property Name="brend" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
-          <Property Name="season" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="brend" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="season" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="color" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="amount" Type="Int32" Nullable="false" />
-          <Property Name="type" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="color" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
           <NavigationProperty Name="users" Relationship="Self.FK_order_users" FromRole="order" ToRole="users" />
         </EntityType>
         <EntityType Name="product">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="Int32" Nullable="false" />
-          <Property Name="brend" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
-          <Property Name="season" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="color" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="brend" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="type" Type="Int32" Nullable="false" />
+          <Property Name="genre" Type="Int32" Nullable="false" />
+          <Property Name="season" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="color" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
           <Property Name="amount" Type="Int32" Nullable="false" />
-          <Property Name="type" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="genretb" Relationship="Self.FK_product_genretb" FromRole="product" ToRole="genretb" />
+          <NavigationProperty Name="typeprod" Relationship="Self.FK_product_typeprod" FromRole="product" ToRole="typeprod" />
         </EntityType>
         <EntityType Name="role">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
-          <NavigationProperty Name="users" Relationship="Self.FK_user_role" FromRole="role" ToRole="users" />
+          <Property Name="name" Type="String" MaxLength="50" FixedLength="true" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="users" Relationship="Self.FK_users_role" FromRole="role" ToRole="users" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -142,32 +202,64 @@
           <Property Name="version" Type="Int32" />
           <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
-        <EntityType Name="users">
+        <EntityType Name="typeprod">
           <Key>
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="firstName" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="secondName" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="login" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="password" Type="String" MaxLength="16" FixedLength="false" Unicode="true" Nullable="false" />
-          <Property Name="roleid" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="order" Relationship="Self.FK_order_users" FromRole="users" ToRole="order" />
-          <NavigationProperty Name="role" Relationship="Self.FK_user_role" FromRole="users" ToRole="role" />
+          <Property Name="typeProduct" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="product" Relationship="Self.FK_product_typeprod" FromRole="typeprod" ToRole="product" />
         </EntityType>
+        <EntityType Name="users">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" />
+          <Property Name="firstName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="secondName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="roleid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <NavigationProperty Name="order" Relationship="Self.FK_order_users" FromRole="users" ToRole="order" />
+          <NavigationProperty Name="role" Relationship="Self.FK_users_role" FromRole="users" ToRole="role" />
+        </EntityType>
+        <Association Name="FK_product_genretb">
+          <End Role="genretb" Type="Self.genretb" Multiplicity="1" />
+          <End Role="product" Type="Self.product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="genretb">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="product">
+              <PropertyRef Name="genre" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_order_users">
-          <End Role="users" Type="Self.users" Multiplicity="1" />
-          <End Role="order" Type="Self.order" Multiplicity="0..1" />
+          <End Role="users" Type="Self.users" Multiplicity="0..1" />
+          <End Role="order" Type="Self.order" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="users">
               <PropertyRef Name="id" />
             </Principal>
             <Dependent Role="order">
-              <PropertyRef Name="id" />
+              <PropertyRef Name="idUser" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_user_role">
+        <Association Name="FK_product_typeprod">
+          <End Role="typeprod" Type="Self.typeprod" Multiplicity="1" />
+          <End Role="product" Type="Self.product" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="typeprod">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="product">
+              <PropertyRef Name="type" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_users_role">
           <End Role="role" Type="Self.role" Multiplicity="1" />
           <End Role="users" Type="Self.users" Multiplicity="*" />
           <ReferentialConstraint>
@@ -180,16 +272,26 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="garmentEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="genretb" EntityType="Self.genretb" />
           <EntitySet Name="order" EntityType="Self.order" />
           <EntitySet Name="product" EntityType="Self.product" />
           <EntitySet Name="role" EntityType="Self.role" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <EntitySet Name="typeprod" EntityType="Self.typeprod" />
           <EntitySet Name="users" EntityType="Self.users" />
+          <AssociationSet Name="FK_product_genretb" Association="Self.FK_product_genretb">
+            <End Role="genretb" EntitySet="genretb" />
+            <End Role="product" EntitySet="product" />
+          </AssociationSet>
           <AssociationSet Name="FK_order_users" Association="Self.FK_order_users">
             <End Role="users" EntitySet="users" />
             <End Role="order" EntitySet="order" />
           </AssociationSet>
-          <AssociationSet Name="FK_user_role" Association="Self.FK_user_role">
+          <AssociationSet Name="FK_product_typeprod" Association="Self.FK_product_typeprod">
+            <End Role="typeprod" EntitySet="typeprod" />
+            <End Role="product" EntitySet="product" />
+          </AssociationSet>
+          <AssociationSet Name="FK_users_role" Association="Self.FK_users_role">
             <End Role="role" EntitySet="role" />
             <End Role="users" EntitySet="users" />
           </AssociationSet>
@@ -200,16 +302,24 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="Хранилище garmentModelContainer" CdmEntityContainer="garmentEntities">
+          <EntitySetMapping Name="genretb">
+            <EntityTypeMapping TypeName="garmentModel.genretb">
+              <MappingFragment StoreEntitySet="genretb">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="genrename" ColumnName="genrename" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="order">
             <EntityTypeMapping TypeName="garmentModel.order">
               <MappingFragment StoreEntitySet="order">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="idUser" ColumnName="idUser" />
                 <ScalarProperty Name="brend" ColumnName="brend" />
-                <ScalarProperty Name="season" ColumnName="season" />
-                <ScalarProperty Name="amount" ColumnName="amount" />
                 <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="season" ColumnName="season" />
                 <ScalarProperty Name="color" ColumnName="color" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -218,10 +328,11 @@
               <MappingFragment StoreEntitySet="product">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="brend" ColumnName="brend" />
+                <ScalarProperty Name="type" ColumnName="type" />
+                <ScalarProperty Name="genre" ColumnName="genre" />
                 <ScalarProperty Name="season" ColumnName="season" />
                 <ScalarProperty Name="color" ColumnName="color" />
                 <ScalarProperty Name="amount" ColumnName="amount" />
-                <ScalarProperty Name="type" ColumnName="type" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -241,6 +352,14 @@
                 <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
                 <ScalarProperty Name="version" ColumnName="version" />
                 <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="typeprod">
+            <EntityTypeMapping TypeName="garmentModel.typeprod">
+              <MappingFragment StoreEntitySet="typeprod">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="typeProduct" ColumnName="typeProduct" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

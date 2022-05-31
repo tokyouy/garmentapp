@@ -94,6 +94,9 @@
     <Compile Include="factoryWin.xaml.cs">
       <DependentUpon>factoryWin.xaml</DependentUpon>
     </Compile>
+    <Compile Include="genretb.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="GuestWin.xaml.cs">
       <DependentUpon>GuestWin.xaml</DependentUpon>
     </Compile>
@@ -139,6 +142,9 @@
       <DependentUpon>SetingsProfile.xaml</DependentUpon>
     </Compile>
     <Compile Include="sysdiagrams.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="typeprod.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="UserProduct.xaml.cs">

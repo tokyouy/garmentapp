@@ -35,6 +35,6 @@
         <TextBox x:Name="cbsecondName" Text="{Binding secondName}" Height="30" Width="200" Grid.Row="1" Grid.Column="1"/>
         <TextBox x:Name="tbLogin" Height="30" Text="{Binding login}" Width="200" Grid.Row="2" Grid.Column="1" />
         <TextBox x:Name="tbPass" Height="30" Text="{Binding password}" Width="200" Grid.Row="3" Grid.Column="1" />
-        <ComboBox x:Name="cbRoles" DisplayMemberPath="name" SelectedValue="{Binding Path=role}"  Height="30" Width="200" Grid.Row="4" Grid.Column="1" />
+        <ComboBox x:Name="cbRoles" DisplayMemberPath="name" SelectedValue="{Binding Path=role}"  Height="30" Width="200" Grid.Row="4" Grid.Column="1" SelectionChanged="cbRoles_SelectionChanged" />
     </Grid>
 </Window>

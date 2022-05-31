@@ -29,13 +29,14 @@
                 <Label Content="Бренд" Margin="20,5,0,0" Width="100" Foreground="Black"></Label>
                 <Label Content="Сезон" Margin="20,5,0,0" Width="100" Foreground="Black"></Label>
                 <Label Content="Цвет" Margin="20,5,0,0" Width="100" Foreground="Black"></Label>
-                <Label Content="Для кого" Margin="20,5,0,0" Foreground="Black"></Label>
+                <Label Content="Пол" Margin="20,5,0,0" Foreground="Black"></Label>
             </StackPanel>
             <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Left">
                 <TextBox x:Name="searchbrend" Margin="20,5,0,0" Width="100" Height="30" TextChanged="searchbrend_TextChanged"></TextBox>
                 <TextBox x:Name="searchseason" Margin="20,5,0,0" Width="100" Height="30" TextChanged="searchseason_TextChanged"></TextBox>
                 <TextBox x:Name="searchcolor" Margin="20,5,0,0" Width="100" Height="30" TextChanged="searchcolor_TextChanged"></TextBox>
-                <ComboBox x:Name="searchtype" Margin="20,5,0,0" Width="100"  Height="30"></ComboBox>
+                <ComboBox Name="cbGendr" DisplayMemberPath="genrename" SelectedValue="{Binding Path=genretb}" Margin="20,5,0,0" Width="100" Height="30">
+                </ComboBox>
             </StackPanel>
             <DataGrid Name="dgProducts" AutoGenerateColumns="False" IsReadOnly="True" Grid.Row="1" Grid.RowSpan="3" Grid.Column="1">
                 <DataGrid.Columns>

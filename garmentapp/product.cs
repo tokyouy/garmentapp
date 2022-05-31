@@ -16,9 +16,13 @@ namespace garmentapp
     {
         public int id { get; set; }
         public string brend { get; set; }
+        public int type { get; set; }
+        public int genre { get; set; }
         public string season { get; set; }
         public string color { get; set; }
         public int amount { get; set; }
-        public string type { get; set; }
+    
+        public virtual genretb genretb { get; set; }
+        public virtual typeprod typeprod { get; set; }
     }
 }

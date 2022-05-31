@@ -25,6 +25,7 @@ namespace garmentapp
             InitializeComponent();
             dgProducts.ItemsSource = garmentEntities.GetContext().product.ToList();
             Manger.dgProducts = dgProducts;
+            cbGendr.ItemsSource = garmentEntities.GetContext().genretb.ToList();
         }
 
         private void searchbrend_TextChanged(object sender, TextChangedEventArgs e)
@@ -47,8 +48,13 @@ namespace garmentapp
 
         private void searchtype_TextChanged(object sender, TextChangedEventArgs e)
         {
-            var garment = garmentEntities.GetContext().product.Where(p => p.type.Contains(searchtype.Text)).ToList();
-            dgProducts.ItemsSource = garment;
+            
+        }
+
+        private void searchtype_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            // var garment = garmentEntities.GetContext().product.Where(p => p.type.Contains(searchtype.Text)).ToList();
+            // dgProducts.ItemsSource = garment;
         }
     }
 }

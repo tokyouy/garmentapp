@@ -17,10 +17,10 @@ namespace garmentapp
         public int id { get; set; }
         public Nullable<int> idUser { get; set; }
         public string brend { get; set; }
-        public string season { get; set; }
-        public int amount { get; set; }
         public string type { get; set; }
+        public string season { get; set; }
         public string color { get; set; }
+        public int amount { get; set; }
     
         public virtual users users { get; set; }
     }

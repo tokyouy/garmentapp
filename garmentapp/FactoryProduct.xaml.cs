@@ -76,8 +76,7 @@ namespace garmentapp
 
         private void searchtype_TextChanged(object sender, TextChangedEventArgs e)
         {
-            var garment = garmentEntities.GetContext().product.Where(p => p.type.Contains(searchtype.Text)).ToList();
-            dgProducts.ItemsSource = garment;
+            
         }
     }
 }

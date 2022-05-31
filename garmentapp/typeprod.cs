@@ -12,23 +12,18 @@ namespace garmentapp
     using System;
     using System.Collections.Generic;
     
-    public partial class users
+    public partial class typeprod
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public users()
+        public typeprod()
         {
-            this.order = new HashSet<order>();
+            this.product = new HashSet<product>();
         }
     
         public int id { get; set; }
-        public string firstName { get; set; }
-        public string secondName { get; set; }
-        public string login { get; set; }
-        public string password { get; set; }
-        public int roleid { get; set; }
+        public string typeProduct { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<order> order { get; set; }
-        public virtual role role { get; set; }
+        public virtual ICollection<product> product { get; set; }
     }
 }
