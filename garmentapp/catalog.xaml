@@ -46,6 +46,15 @@
                     <DataGridTextColumn Header="Цвет" Binding="{Binding color}"></DataGridTextColumn>
                     <DataGridTextColumn Header="Количество" Binding="{Binding amount}"></DataGridTextColumn>
                     <DataGridTextColumn Header="Пол" Binding="{Binding genre}"></DataGridTextColumn>
+                    <DataGridTemplateColumn>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <Button x:Name="btnAbout" Content="О продукте"></Button>
+                                </StackPanel>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
                 </DataGrid.Columns>
             </DataGrid>
         </Grid>
