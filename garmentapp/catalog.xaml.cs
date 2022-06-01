@@ -34,8 +34,8 @@ namespace garmentapp
             dgProducts.ItemsSource = garment;
         }
 
-        private void searchseason_TextChanged(object sender, TextChangedEventArgs e)
-        {
+          private void searchseason_TextChanged(object sender, TextChangedEventArgs e)
+      {
             var garment = garmentEntities.GetContext().product.Where(p => p.season.Contains(searchseason.Text)).ToList();
             dgProducts.ItemsSource = garment;
         }
@@ -55,6 +55,30 @@ namespace garmentapp
         {
             // var garment = garmentEntities.GetContext().product.Where(p => p.type.Contains(searchtype.Text)).ToList();
             // dgProducts.ItemsSource = garment;
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            var currentItem = garmentEntities.GetContext().product.ToList();
+            dgProducts.ItemsSource = currentItem;
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            var currentItem = garmentEntities.GetContext().product.Where(p => p.type == 2);
+            dgProducts.ItemsSource = currentItem;
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            var currentItem = garmentEntities.GetContext().product.Where(p => p.type == 3);
+            dgProducts.ItemsSource = currentItem;
+        }
+
+        private void Button_Click_3(object sender, RoutedEventArgs e)
+        {
+            var currentItem = garmentEntities.GetContext().product.Where(p => p.type == 4);
+            dgProducts.ItemsSource = currentItem;
         }
     }
 }

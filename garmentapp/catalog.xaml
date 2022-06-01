@@ -20,10 +20,10 @@
                 <RowDefinition/>
             </Grid.RowDefinitions>
             <StackPanel Grid.Row="0" Grid.RowSpan="4" HorizontalAlignment="Left">
-                <Button Content="Вся одежда" Margin="10,5,0,4" Height="60" Width="200"/>
-                <Button Content="Корпоративная одежда" Margin="10,0,0,4" Height="60" Width="200"/>
-                <Button Content="Повседневная одежда" Margin="10,0,0,4" Height="60" Width="200"/>
-                <Button Content="Униформа" Margin="10,0,0,4" Height="60" Width="200"/>
+                <Button Content="Вся одежда" Margin="10,5,0,4" Height="60" Width="200" Click="Button_Click"/>
+                <Button Content="Корпоративная одежда" Margin="10,0,0,4" Height="60" Width="200" Click="Button_Click_1"/>
+                <Button Content="Повседневная одежда" Margin="10,0,0,4" Height="60" Width="200" Click="Button_Click_2"/>
+                <Button Content="Униформа" Margin="10,0,0,4" Height="60" Width="200" Click="Button_Click_3"/>
             </StackPanel>
             <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Left">
                 <Label Content="Бренд" Margin="20,5,0,0" Width="100" Foreground="Black"></Label>
