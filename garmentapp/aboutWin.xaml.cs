@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.IO;
 
 namespace garmentapp
 {
@@ -28,11 +29,14 @@ namespace garmentapp
                 _currentnProduct = selecteProduct;
             }
             DataContext = _currentnProduct;
-        }
+
+    }
+        private byte[] _imageBytes = null;
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
         }
+
     }
 }

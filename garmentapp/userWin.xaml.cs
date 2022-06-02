@@ -57,7 +57,6 @@ namespace garmentapp
         {
             order orderWin = new order();
             orderWin.Show();
-            this.Hide();
         }
     }
 }
