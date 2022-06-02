@@ -27,7 +27,8 @@ namespace garmentapp
 
         private void btnSettings_Click(object sender, RoutedEventArgs e)
         {
-            CatalogFrame.Content = new SetingsProfile(Manger.validateUser);
+            SetingsProfile setwin = new SetingsProfile(Manger.validateUser);
+            setwin.Show();
         }
 
         private void btnCatalog_Click(object sender, RoutedEventArgs e)
@@ -40,6 +41,16 @@ namespace garmentapp
             MainWindow mainWin = new MainWindow();
             mainWin.Show();
             this.Hide();
+        }
+
+        private void btnMCatalog_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Content = new catalogMMan();
+        }
+
+        private void btnWCatalog_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Content = new catalogWMan();
         }
     }
 }

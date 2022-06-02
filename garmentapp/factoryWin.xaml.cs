@@ -34,12 +34,24 @@ namespace garmentapp
 
         private void btnSettings_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Content = new SetingsProfile(Manger.validateUser);
+            SetingsProfile setwin = new SetingsProfile(Manger.validateUser);
+            setwin.Show();
+        }
+
+
+        private void btnMCatalog_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Content = new catalogMMan();
+        }
+
+        private void btnWCatalog_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Content = new catalogWMan();
         }
 
         private void btnCatalog_Click_1(object sender, RoutedEventArgs e)
         {
-            // MainFrame.Content = new listCatalog();
+            MainFrame.Content = new catalogWMan();
         }
     }
 }

@@ -18,7 +18,7 @@ namespace garmentapp
     /// <summary>
     /// Логика взаимодействия для SetingsProfile.xaml
     /// </summary>
-    public partial class SetingsProfile : Page
+    public partial class SetingsProfile : Window
     {
         users _currentUser = new users();
         public SetingsProfile(users selectedUser)
