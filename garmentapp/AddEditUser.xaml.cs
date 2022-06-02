@@ -62,10 +62,5 @@ namespace garmentapp
                 }
             }
         }
-
-        private void cbRoles_SelectionChanged(object sender, SelectionChangedEventArgs e)
-        {
-
-        }
     }
 }

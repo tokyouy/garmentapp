@@ -49,7 +49,6 @@
                         <DataTemplate>
                             <StackPanel>
                                 <Button x:Name="btnAbout" Content="О продукте"/>
-                                <Button x:Name="btntoOrder" Content="В заказы" IsEnabled="False"/>
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>

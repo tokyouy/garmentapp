@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:garmentapp"
         mc:Ignorable="d"
-        Title="Добавление/Редактирование пользователя" Height="450" Width="700" ResizeMode="NoResize" Icon="/Assets/icon.png">
+        Title="Добавление/Редактирование пользователя" Height="450" Width="430" ResizeMode="NoResize" Icon="/Assets/icon.png">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
@@ -25,7 +25,7 @@
         <TextBlock Text="Логин" VerticalAlignment="Center" FontSize="30" HorizontalAlignment="Center" Grid.Row="2" Grid.Column="0" />
         <TextBlock Text="Пароль" VerticalAlignment="Center" FontSize="30" HorizontalAlignment="Center" Grid.Row="3" Grid.Column="0" />
         <TextBlock Text="Роль" VerticalAlignment="Center" FontSize="30" HorizontalAlignment="Center" Grid.Row="4" Grid.Column="0" />
-        <Button Name="btnSave" Content="Сохранить" Height="30" Width="100" Grid.Row="5" Grid.ColumnSpan="2"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <Button Name="btnSave" Content="Сохранить" Height="30" Width="100" Grid.Row="5" Grid.ColumnSpan="2"  HorizontalAlignment="Center" VerticalAlignment="Center" Click="btnSave_Click"/>
         <TextBox x:Name="cbFullName" Text="{Binding firstName}" Height="30" Width="200" Grid.Row="0" Grid.Column="1"/>
         <TextBox x:Name="cbsecondName" Text="{Binding secondName}" Height="30" Width="200" Grid.Row="1" Grid.Column="1"/>
         <TextBox x:Name="tbLogin" Height="30" Text="{Binding login}" Width="200" Grid.Row="2" Grid.Column="1" />

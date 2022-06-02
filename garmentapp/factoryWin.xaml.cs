@@ -38,7 +38,6 @@ namespace garmentapp
             setwin.Show();
         }
 
-
         private void btnMCatalog_Click(object sender, RoutedEventArgs e)
         {
             MainFrame.Content = new AdminProduct();
