@@ -59,7 +59,7 @@ namespace garmentapp
 
         private void typeDayZ_Click(object sender, RoutedEventArgs e)
         {
-            var currentItem = garmentEntities.GetContext().productwmen.Where(p => p.type == "Корпоративная одежда").ToList();
+            var currentItem = garmentEntities.GetContext().productwmen.Where(p => p.type == "Повседневная одежда").ToList();
             dgWMenProducts.ItemsSource = currentItem;
         }
 
