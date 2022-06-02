@@ -18,15 +18,13 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
-            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Canvas Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" Background="DarkSlateGray"/>
         <TextBlock Text="Бренд" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="0"/>
         <TextBlock Text="Наименование" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="1"/>
         <TextBlock Text="Сезон" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="2"/>
         <TextBlock Text="Тип" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="3"/>
-        <TextBlock Text="Пол" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="4"/>
-        <TextBlock Text="Цвет" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="5"/>
+        <TextBlock Text="Цвет" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="4"/>
         <ComboBox Text="{Binding brend}" Height="30" Width="200" Grid.Column="1" Grid.Row="0">
             <ComboBoxItem>
                 adidas
@@ -64,15 +62,7 @@
                 Униформа одежда
             </ComboBoxItem>
         </ComboBox>
-        <ComboBox Text="{Binding genre}" Height="30" Width="200" Grid.Column="1" Grid.Row="4">
-            <ComboBoxItem>
-                Муж
-            </ComboBoxItem>
-            <ComboBoxItem>
-                Жен
-            </ComboBoxItem>
-        </ComboBox>
-        <ComboBox Text="{Binding color}" Height="30" Width="200" Grid.Column="1" Grid.Row="5">
+        <ComboBox Text="{Binding color}" Height="30" Width="200" Grid.Column="1" Grid.Row="4">
             <ComboBoxItem>
                 Черный
             </ComboBoxItem>
@@ -83,6 +73,6 @@
                 Красный
             </ComboBoxItem>
         </ComboBox>
-        <Button x:Name="btnSave" Content="Сохранить" Height="30" Width="200" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2" Grid.Row="6"/>
+        <Button x:Name="btnSave" Content="Сохранить" Height="30" Width="200" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2" Grid.Row="6" Click="btnSave_Click"/>
     </Grid>
 </Window>

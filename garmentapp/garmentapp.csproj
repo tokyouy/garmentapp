@@ -76,6 +76,9 @@
     <Compile Include="AdminProduct.xaml.cs">
       <DependentUpon>AdminProduct.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AdminProductW.xaml.cs">
+      <DependentUpon>AdminProductW.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AdminUser.xaml.cs">
       <DependentUpon>AdminUser.xaml</DependentUpon>
     </Compile>
@@ -143,6 +146,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AdminProduct.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AdminProductW.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

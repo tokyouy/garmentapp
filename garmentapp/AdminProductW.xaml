@@ -1,4 +1,4 @@
-﻿<Page x:Class="garmentapp.AdminProduct"
+﻿<Page x:Class="garmentapp.AdminProductW"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -21,10 +21,10 @@
             <RowDefinition Height="8*"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="0" Grid.RowSpan="5" HorizontalAlignment="Left">
-            <Button x:Name="typeAll" Content="Вся одежда" Margin="10,5,0,4" Height="60" Width="200" />
-            <Button x:Name="typeCorp" Content="Корпоративная одежда" Margin="10,0,0,4" Height="60" Width="200" />
-            <Button x:Name="typeDayZ" Content="Повседневная одежда" Margin="10,0,0,4" Height="60" Width="200" />
-            <Button x:Name="typeUni" Content="Униформа" Margin="10,0,0,4" Height="60" Width="200"/>
+            <Button x:Name="typeAll" Content="Вся одежда" Margin="10,5,0,4" Height="60" Width="200" Click="typeAll_Click" />
+            <Button x:Name="typeCorp" Content="Корпоративная одежда" Margin="10,0,0,4" Height="60" Width="200" Click="typeCorp_Click" />
+            <Button x:Name="typeDayZ" Content="Повседневная одежда" Margin="10,0,0,4" Height="60" Width="200" Click="typeDayZ_Click" />
+            <Button x:Name="typeUni" Content="Униформа" Margin="10,0,0,4" Height="60" Width="200" Click="typeUni_Click" />
         </StackPanel>
         <StackPanel Grid.Row="0" Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Left">
             <Label Content="Бренд" Margin="20,5,0,0" Width="100" Foreground="Black"></Label>
@@ -36,7 +36,7 @@
             <TextBox x:Name="searchseason" Margin="20,5,0,0" Width="100" Height="30" TextChanged="searchseason_TextChanged" ></TextBox>
             <TextBox x:Name="searchcolor" Margin="20,5,0,0" Width="100" Height="30" TextChanged="searchcolor_TextChanged" ></TextBox>
         </StackPanel>
-        <DataGrid Name="dgMenProducts" AutoGenerateColumns="False" IsReadOnly="True" Grid.Row="1" Grid.RowSpan="3" Grid.Column="1">
+        <DataGrid Name="dgWMenProducts" AutoGenerateColumns="False" IsReadOnly="True" Grid.Row="1" Grid.RowSpan="3" Grid.Column="1">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Бренд" Binding="{Binding brend}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Тип" Binding="{Binding type}"></DataGridTextColumn>

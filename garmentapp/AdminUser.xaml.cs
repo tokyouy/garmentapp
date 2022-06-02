@@ -18,7 +18,7 @@ namespace garmentapp
     /// <summary>
     /// Логика взаимодействия для AdminUser.xaml
     /// </summary>
-    public partial class AdminUser : Page
+    public partial class AdminUser : Window
     {
         public AdminUser()
         {

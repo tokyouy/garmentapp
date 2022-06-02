@@ -23,12 +23,12 @@ namespace garmentapp
         public AdminProduct()
         {
             InitializeComponent();
-            dgProducts.ItemsSource = garmentEntities.GetContext().productmen.ToList();
+            dgMenProducts.ItemsSource = garmentEntities.GetContext().productmen.ToList();
         }
 
         private void btnEdit_Click(object sender, RoutedEventArgs e)
         {
-            AddEditProduct addEditProduct = new AddEditProduct(dgProducts.SelectedItem as productmen);
+            AddEditProduct addEditProduct = new AddEditProduct(dgMenProducts.SelectedItem as productmen);
             addEditProduct.Show();
         }
 
@@ -36,7 +36,7 @@ namespace garmentapp
         {
             if (MessageBox.Show("Вы уверены что хотите удалить запись?", "Вы уверены?", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
             {
-                var selectedItem = dgProducts.SelectedItem;
+                var selectedItem = dgMenProducts.SelectedItem;
                 garmentEntities.GetContext().productmen.Remove(selectedItem as productmen);
                 try
                 {
@@ -52,7 +52,7 @@ namespace garmentapp
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-            AddEditProduct addEditProduct = new AddEditProduct(dgProducts.SelectedItem as productmen);
+            AddEditProduct addEditProduct = new AddEditProduct(dgMenProducts.SelectedItem as productmen);
             addEditProduct.Show();
         }
 
@@ -64,19 +64,19 @@ namespace garmentapp
         private void searchbrend_TextChanged(object sender, TextChangedEventArgs e)
         {
             var garment = garmentEntities.GetContext().productmen.Where(p => p.brend.Contains(searchbrend.Text)).ToList();
-            dgProducts.ItemsSource = garment;
+            dgMenProducts.ItemsSource = garment;
         }
 
         private void searchseason_TextChanged(object sender, TextChangedEventArgs e)
         {
             var garment = garmentEntities.GetContext().productmen.Where(p => p.season.Contains(searchseason.Text)).ToList();
-            dgProducts.ItemsSource = garment;
+            dgMenProducts.ItemsSource = garment;
         }
 
         private void searchcolor_TextChanged(object sender, TextChangedEventArgs e)
         {
             var garment = garmentEntities.GetContext().productmen.Where(p => p.color.Contains(searchcolor.Text)).ToList();
-            dgProducts.ItemsSource = garment;
+            dgMenProducts.ItemsSource = garment;
         }
 
         private void searchtype_TextChanged(object sender, TextChangedEventArgs e)

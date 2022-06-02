@@ -24,16 +24,10 @@ namespace garmentapp
             InitializeComponent();
         }
 
-
-
         private void btnUsers_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Content = new AdminUser();
-        }
-
-        private void btnCatalog_Click(object sender, RoutedEventArgs e)
-        {
-            // MainFrame.Content = new listCatalog();
+            AdminUser usersWindow = new AdminUser();
+            usersWindow.Show();
         }
 
         private void btnOut_Click(object sender, RoutedEventArgs e)
@@ -41,6 +35,16 @@ namespace garmentapp
             MainWindow authWindow = new MainWindow();
             authWindow.Show();
             this.Hide();
+        }
+
+        private void btnWCatalog_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Content = new AdminProductW();
+        }
+
+        private void btnMCatalog_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Content = new AdminProduct();
         }
     }
 }
