@@ -70,6 +70,9 @@
     <Compile Include="AddEditProduct.xaml.cs">
       <DependentUpon>AddEditProduct.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AddEditProductW.xaml.cs">
+      <DependentUpon>AddEditProductW.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AddEditUser.xaml.cs">
       <DependentUpon>AddEditUser.xaml</DependentUpon>
     </Compile>
@@ -138,6 +141,10 @@
       <DependentUpon>userWin.xaml</DependentUpon>
     </Compile>
     <Page Include="AddEditProduct.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddEditProductW.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
