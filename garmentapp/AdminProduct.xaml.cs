@@ -24,6 +24,21 @@ namespace garmentapp
         {
             InitializeComponent();
             dgProducts.ItemsSource = garmentEntities.GetContext().product.ToList();
+
+           /* switch (Manger.validateUser.roleid)
+            {
+                case 1:
+                    {
+                        btnAdd.Visibility = Visibility.Visible;
+                    }
+                    break;
+                case 3:
+                    {
+                        btnAdd.Visibility = Visibility.Visible;
+                    }
+                    break;
+            }
+           */
         }
 
         private void btnEdit_Click(object sender, RoutedEventArgs e)
@@ -48,12 +63,6 @@ namespace garmentapp
                     MessageBox.Show($"Произошла ошибка! Ошибка:{ex.Message}");
                 }
             }
-        }
-
-        private void btnAddProduct_Click(object sender, RoutedEventArgs e)
-        {
-            // AddEditProduct addEditProduct = new AddEditProduct(dgProducts.SelectedItem as product);
-            // addEditProduct.Show();
         }
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
@@ -96,5 +105,6 @@ namespace garmentapp
             AddEditProduct addEditProduct = new AddEditProduct(null);
             addEditProduct.Show();
         }
+
     }
 }

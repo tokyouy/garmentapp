@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:garmentapp"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="AdminUser" Background="#dadfdf">
+      Title="Пользователи" Height="450" Width="800" Background="#dadfdf">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="60"/>
@@ -19,14 +19,14 @@
         <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Left">
             <TextBox x:Name="searchlogin" Width="100" Margin="20,30,0,10" TextChanged="searchbrend_TextChanged"></TextBox>
         </StackPanel>
-        <DataGrid Name="dgUsers" AutoGenerateColumns="False" IsReadOnly="True" Grid.Row="1">
+        <DataGrid Grid.Row="1" Name="dgUsers" AutoGenerateColumns="False" IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding id}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Имя" Binding="{Binding firstName}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Фамилия" Binding="{Binding secondName}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Логин" Binding="{Binding login}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Пароль" Binding="{Binding password}"></DataGridTextColumn>
-                <DataGridTextColumn Header="Роль" Binding="{Binding roleid}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Роль" Binding="{Binding role.name}"></DataGridTextColumn>
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
@@ -39,6 +39,8 @@
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
-        <Button x:Name="btnAdduser" Content="Добавить пользователя" Height="30" Width="200" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Row="2" Click="btnAddProduct_Click"/>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button x:Name="btnAdd" Content="Добавить" Height="30" Width="100" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,10,0" Click="btnAdd_Click"/>
+        </StackPanel>
     </Grid>
 </Page>

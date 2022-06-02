@@ -22,12 +22,7 @@ namespace garmentapp
         public GuestWin()
         {
             InitializeComponent();
-            MainFrame.Content = new catalog();
-        }
-
-        private void btnShop_Click(object sender, RoutedEventArgs e)
-        {
-
+            MainFrame.Content = new listCatalog();
         }
 
         private void btnUserRegistration_Click(object sender, RoutedEventArgs e)

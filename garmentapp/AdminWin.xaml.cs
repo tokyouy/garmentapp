@@ -24,21 +24,23 @@ namespace garmentapp
             InitializeComponent();
         }
 
-        private void btnShop_Click(object sender, RoutedEventArgs e)
+
+
+        private void btnUsers_Click(object sender, RoutedEventArgs e)
         {
-            //MainFrame.Content = new UserWindow();
-            UserWindow userWind = new UserWindow();
-            userWind.Show();
+            MainFrame.Content = new AdminUser();
         }
 
-        private void btnProductGrid_Click(object sender, RoutedEventArgs e)
+        private void btnCatalog_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Content = new AdminProduct();
+            MainFrame.Content = new listCatalog();
         }
 
-        private void btnOrderGrid_Click(object sender, RoutedEventArgs e)
+        private void btnOut_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Content = new orderWin();
+            MainWindow authWindow = new MainWindow();
+            authWindow.Show();
+            this.Hide();
         }
     }
 }

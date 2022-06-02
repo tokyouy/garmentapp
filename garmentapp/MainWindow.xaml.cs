@@ -70,12 +70,18 @@ namespace garmentapp
             ValidateUser(Login, Password);
         }
 
-        private void RegisterBtn_Click_1(object sender, RoutedEventArgs e)
+
+        private void ReturnBtn_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWin = new MainWindow();
+            mainWin.Show();
+            this.Hide();
+        }
+
+        private void RegisterBtn_Click(object sender, RoutedEventArgs e)
         {
             regWin registrationWin = new regWin();
             registrationWin.Show();
         }
-
-        
     }
 }

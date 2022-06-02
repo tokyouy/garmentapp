@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:garmentapp"
         mc:Ignorable="d"
-        Title="Garment" Height="450" Width="400" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" Background="#dadfdf" Icon="/Assets/icon.png">
+        Title="Garment: Авторизация" Height="450" Width="500" ResizeMode="CanMinimize" WindowStartupLocation="CenterScreen" Background="#dadfdf" Icon="/Assets/icon.png">
     <Grid Height="434" VerticalAlignment="Top">
         <Grid.RowDefinitions>
             <RowDefinition Height="125"/>
@@ -23,9 +23,10 @@
             <PasswordBox x:Name="pbPass" HorizontalAlignment="Center" VerticalAlignment="Top" Height="30" Width="275"
                       Margin="0,0"  Background="#FFFAFAFD" FontSize="18"/>
         </StackPanel>
-        <StackPanel Grid.Row="2">
-            <Button x:Name="RegisterBtn" Content="Регистрация" Height="30" Width="130" Click="RegisterBtn_Click_1" FontSize="14" Margin="145,-30,0,0" VerticalAlignment="Top" HorizontalAlignment="Center" />
-            <Button x:Name="LoginBtn" Content="Войти" Height="30" Width="130" HorizontalAlignment="Left"  Click="LoginBtn_Click" FontSize="14" Margin="55,-30,0,0"/>
-        </StackPanel>
+        <Canvas Grid.Row="2">
+            <Button x:Name="RegisterBtn" Content="Регистрация" Height="30" Width="130" FontSize="14" VerticalAlignment="Top" HorizontalAlignment="Right" Canvas.Right="115" Click="RegisterBtn_Click"/>
+            <Button x:Name="LoginBtn" Content="Войти" Height="30" Width="130" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="14" Canvas.Left="115" Click="LoginBtn_Click"/>
+            <Button x:Name="ReturnBtn" Content="Вернуться как гость"  Height="30" Width="270" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="14" Canvas.Left="115" Canvas.Top="45" Click="ReturnBtn_Click"/>
+        </Canvas>
     </Grid>
 </Window>

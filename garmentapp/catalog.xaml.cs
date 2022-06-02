@@ -46,10 +46,6 @@ namespace garmentapp
             dgProducts.ItemsSource = garment;
         }
 
-        private void searchtype_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            
-        }
 
         private void searchtype_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
@@ -65,19 +61,25 @@ namespace garmentapp
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-            var currentItem = garmentEntities.GetContext().product.Where(p => p.type == 2);
+            var currentItem = garmentEntities.GetContext().product.Where(p => p.type == 2).ToList();
             dgProducts.ItemsSource = currentItem;
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-            var currentItem = garmentEntities.GetContext().product.Where(p => p.type == 3);
+            var currentItem = garmentEntities.GetContext().product.Where(p => p.type == 3).ToList();
             dgProducts.ItemsSource = currentItem;
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-            var currentItem = garmentEntities.GetContext().product.Where(p => p.type == 4);
+            var currentItem = garmentEntities.GetContext().product.Where(p => p.type == 4).ToList();
+            dgProducts.ItemsSource = currentItem;
+        }
+
+        private void cbGendr_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var currentItem = garmentEntities.GetContext().product.Where(p => p.genretb.genrename == cbGendr.Text).ToList();
             dgProducts.ItemsSource = currentItem;
         }
     }

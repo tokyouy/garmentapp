@@ -15,24 +15,13 @@ using System.Windows.Shapes;
 namespace garmentapp
 {
     /// <summary>
-    /// Логика взаимодействия для userWin.xaml
+    /// Логика взаимодействия для catalogMMan.xaml
     /// </summary>
-    public partial class userWin : Window
+    public partial class catalogMMan : Window
     {
-        public userWin()
+        public catalogMMan()
         {
             InitializeComponent();
-
-        }
-
-        private void btnSettings_Click(object sender, RoutedEventArgs e)
-        {
-            CatalogFrame.Content = new SetingsProfile(Manger.validateUser);
-        }
-
-        private void btnCatalog_Click(object sender, RoutedEventArgs e)
-        {
-            MainFrame.Content = new SetingsProfile(Manger.validateUser);
         }
     }
 }

@@ -20,32 +20,26 @@ namespace garmentapp
     public partial class facWin : Window
     {
 
-
-
         public facWin()
         {
             InitializeComponent();
         }
 
-        private void tbSearch_TextChanged(object sender, TextChangedEventArgs e)
+        private void btnOut_Click(object sender, RoutedEventArgs e)
         {
-            // var product = garmentEntities.GetContext().product.Where(p => p.color == tbSearch.Text).ToList();
-            // Manger.dgProducts.ItemsSource = product;
+            MainWindow authWindow = new MainWindow();
+            authWindow.Show();
+            this.Hide();
         }
 
-        private void btnAppSettings_Click(object sender, RoutedEventArgs e)
+        private void btnSettings_Click(object sender, RoutedEventArgs e)
         {
             MainFrame.Content = new SetingsProfile(Manger.validateUser);
         }
 
-        private void btnCatalog_Click(object sender, RoutedEventArgs e)
+        private void btnCatalog_Click_1(object sender, RoutedEventArgs e)
         {
-            MainFrame.Content = new catalog();
-        }
-
-        private void btnOrderGrid_Click(object sender, RoutedEventArgs e)
-        {
-            MainFrame.Content = new orderFactory();
+            MainFrame.Content = new listCatalog();
         }
     }
 }

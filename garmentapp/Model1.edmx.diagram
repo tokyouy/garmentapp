@@ -4,17 +4,12 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="edacd16a43174219b75f776effc4bf41" Name="Diagram1">
-        <EntityTypeShape EntityType="garmentModel.genretb" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="garmentModel.order" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="garmentModel.product" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+      <Diagram DiagramId="dad6489b26434c99949e0409d6e146c6" Name="Diagram1">
+        <EntityTypeShape EntityType="garmentModel.productmen" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="garmentModel.productwmen" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="garmentModel.role" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="garmentModel.sysdiagrams" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="garmentModel.typeprod" Width="1.5" PointX="0.75" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="garmentModel.sysdiagrams" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="garmentModel.users" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <AssociationConnector Association="garmentModel.FK_product_genretb" ManuallyRouted="false" />
-        <AssociationConnector Association="garmentModel.FK_order_users" ManuallyRouted="false" />
-        <AssociationConnector Association="garmentModel.FK_product_typeprod" ManuallyRouted="false" />
         <AssociationConnector Association="garmentModel.FK_users_role" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>

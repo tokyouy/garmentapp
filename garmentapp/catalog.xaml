@@ -11,15 +11,17 @@
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="220"/>
-                <ColumnDefinition/>
+                <ColumnDefinition Width="143*"/>
+                <ColumnDefinition Width="2*"/>
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="75"/>
-                <RowDefinition/>
-                <RowDefinition/>
-                <RowDefinition/>
+                <RowDefinition Height="125*"/>
+                <RowDefinition Height="125*"/>
+                <RowDefinition Height="117*"/>
+                <RowDefinition Height="8*"/>
             </Grid.RowDefinitions>
-            <StackPanel Grid.Row="0" Grid.RowSpan="4" HorizontalAlignment="Left">
+            <StackPanel Grid.Row="0" Grid.RowSpan="5" HorizontalAlignment="Left">
                 <Button Content="Вся одежда" Margin="10,5,0,4" Height="60" Width="200" Click="Button_Click"/>
                 <Button Content="Корпоративная одежда" Margin="10,0,0,4" Height="60" Width="200" Click="Button_Click_1"/>
                 <Button Content="Повседневная одежда" Margin="10,0,0,4" Height="60" Width="200" Click="Button_Click_2"/>
@@ -35,22 +37,24 @@
                 <TextBox x:Name="searchbrend" Margin="20,5,0,0" Width="100" Height="30" TextChanged="searchbrend_TextChanged"></TextBox>
                 <TextBox x:Name="searchseason" Margin="20,5,0,0" Width="100" Height="30" TextChanged="searchseason_TextChanged"></TextBox>
                 <TextBox x:Name="searchcolor" Margin="20,5,0,0" Width="100" Height="30" TextChanged="searchcolor_TextChanged"></TextBox>
-                <ComboBox Name="cbGendr" DisplayMemberPath="genrename" SelectedValue="{Binding Path=genretb}" Margin="20,5,0,0" Width="100" Height="30">
+                <ComboBox Name="cbGendr" DisplayMemberPath="genrename" SelectedValue="{Binding Path=genretb}" Margin="20,5,0,0" Width="100" Height="30" SelectionChanged="cbGendr_SelectionChanged">
                 </ComboBox>
             </StackPanel>
             <DataGrid Name="dgProducts" AutoGenerateColumns="False" IsReadOnly="True" Grid.Row="1" Grid.RowSpan="3" Grid.Column="1">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="Бренд" Binding="{Binding brend}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Наименование" Binding="{Binding nameprod}"></DataGridTextColumn>
                     <DataGridTextColumn Header="Сезон" Binding="{Binding season}"></DataGridTextColumn>
                     <DataGridTextColumn Header="Тип" Binding="{Binding type}"></DataGridTextColumn>
                     <DataGridTextColumn Header="Цвет" Binding="{Binding color}"></DataGridTextColumn>
                     <DataGridTextColumn Header="Количество" Binding="{Binding amount}"></DataGridTextColumn>
-                    <DataGridTextColumn Header="Пол" Binding="{Binding genre}"></DataGridTextColumn>
+                    <DataGridTextColumn Header="Пол" Binding="{Binding genretb.genrename}"></DataGridTextColumn>
                     <DataGridTemplateColumn>
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
                                 <StackPanel>
-                                    <Button x:Name="btnAbout" Content="О продукте"></Button>
+                                    <Button x:Name="btnAbout" Content="О продукте"/>
+                                    <Button x:Name="btntoOrder" Content="В заказы"></Button>
                                 </StackPanel>
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>

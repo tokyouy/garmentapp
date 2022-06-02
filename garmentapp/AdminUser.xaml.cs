@@ -50,16 +50,16 @@ namespace garmentapp
             }
         }
 
-        private void btnAddProduct_Click(object sender, RoutedEventArgs e)
-        {
-            AddEditUser addEditUser = new AddEditUser(null);
-            addEditUser.Show();
-        }
-
         private void searchbrend_TextChanged(object sender, TextChangedEventArgs e)
         {
             var garment = garmentEntities.GetContext().users.Where(p => p.login.Contains(searchlogin.Text)).ToList();
             dgUsers.ItemsSource = garment;
+        }
+
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            AddEditUser addEditUser = new AddEditUser(null);
+            addEditUser.Show();
         }
     }
 }

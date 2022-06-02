@@ -10,29 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace garmentapp
 {
     /// <summary>
-    /// Логика взаимодействия для userWin.xaml
+    /// Логика взаимодействия для catalogWMan.xaml
     /// </summary>
-    public partial class userWin : Window
+    public partial class catalogWMan : Page
     {
-        public userWin()
+        public catalogWMan()
         {
             InitializeComponent();
-
-        }
-
-        private void btnSettings_Click(object sender, RoutedEventArgs e)
-        {
-            CatalogFrame.Content = new SetingsProfile(Manger.validateUser);
-        }
-
-        private void btnCatalog_Click(object sender, RoutedEventArgs e)
-        {
-            MainFrame.Content = new SetingsProfile(Manger.validateUser);
         }
     }
 }

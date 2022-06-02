@@ -10,29 +10,29 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace garmentapp
 {
     /// <summary>
-    /// Логика взаимодействия для userWin.xaml
+    /// Логика взаимодействия для listCatalog.xaml
     /// </summary>
-    public partial class userWin : Window
+    public partial class listCatalog : Page
     {
-        public userWin()
+        public listCatalog()
         {
             InitializeComponent();
-
         }
 
-        private void btnSettings_Click(object sender, RoutedEventArgs e)
+        private void btnManCatalog_Click(object sender, RoutedEventArgs e)
         {
-            CatalogFrame.Content = new SetingsProfile(Manger.validateUser);
+            CatalogFrame.Content = new catalogMMan();
         }
 
-        private void btnCatalog_Click(object sender, RoutedEventArgs e)
+        private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Content = new SetingsProfile(Manger.validateUser);
+            CatalogFrame.Content = new catalogWMan();
         }
     }
 }

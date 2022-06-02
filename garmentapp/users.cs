@@ -14,12 +14,6 @@ namespace garmentapp
     
     public partial class users
     {
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public users()
-        {
-            this.order = new HashSet<order>();
-        }
-    
         public int id { get; set; }
         public string firstName { get; set; }
         public string secondName { get; set; }
@@ -27,8 +21,6 @@ namespace garmentapp
         public string password { get; set; }
         public int roleid { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<order> order { get; set; }
         public virtual role role { get; set; }
     }
 }
