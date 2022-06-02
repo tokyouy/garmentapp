@@ -36,6 +36,7 @@ namespace garmentapp
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<order> order { get; set; }
         public virtual DbSet<productmen> productmen { get; set; }
         public virtual DbSet<productwmen> productwmen { get; set; }
         public virtual DbSet<role> role { get; set; }

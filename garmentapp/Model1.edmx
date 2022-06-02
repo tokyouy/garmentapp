@@ -5,6 +5,18 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
       <Schema Namespace="Хранилище garmentModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="order">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nameprod" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="season" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="about" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="color" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="amount" Type="int" Nullable="false" />
+          <Property Name="idUser" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="productmen">
           <Key>
             <PropertyRef Name="id" />
@@ -57,6 +69,18 @@
           <Property Name="password" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="roleid" Type="int" Nullable="false" />
         </EntityType>
+        <Association Name="FK_order_users">
+          <End Role="users" Type="Self.users" Multiplicity="1" />
+          <End Role="order" Type="Self.order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="users">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="order">
+              <PropertyRef Name="idUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_users_role">
           <End Role="role" Type="Self.role" Multiplicity="1" />
           <End Role="users" Type="Self.users" Multiplicity="*" />
@@ -70,11 +94,16 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="Хранилище garmentModelContainer">
+          <EntitySet Name="order" EntityType="Self.order" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="productmen" EntityType="Self.productmen" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="productwmen" EntityType="Self.productwmen" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="role" EntityType="Self.role" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_order_users" Association="Self.FK_order_users">
+            <End Role="users" EntitySet="users" />
+            <End Role="order" EntitySet="order" />
+          </AssociationSet>
           <AssociationSet Name="FK_users_role" Association="Self.FK_users_role">
             <End Role="role" EntitySet="role" />
             <End Role="users" EntitySet="users" />
@@ -85,6 +114,19 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="garmentModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="order">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nameprod" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="season" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="about" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="color" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="amount" Type="Int32" Nullable="false" />
+          <Property Name="idUser" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="users" Relationship="Self.FK_order_users" FromRole="order" ToRole="users" />
+        </EntityType>
         <EntityType Name="productmen">
           <Key>
             <PropertyRef Name="id" />
@@ -137,8 +179,21 @@
           <Property Name="login" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="roleid" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="order" Relationship="Self.FK_order_users" FromRole="users" ToRole="order" />
           <NavigationProperty Name="role" Relationship="Self.FK_users_role" FromRole="users" ToRole="role" />
         </EntityType>
+        <Association Name="FK_order_users">
+          <End Role="users" Type="Self.users" Multiplicity="1" />
+          <End Role="order" Type="Self.order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="users">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="order">
+              <PropertyRef Name="idUser" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_users_role">
           <End Role="role" Type="Self.role" Multiplicity="1" />
           <End Role="users" Type="Self.users" Multiplicity="*" />
@@ -152,11 +207,16 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="garmentEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="order" EntityType="Self.order" />
           <EntitySet Name="productmen" EntityType="Self.productmen" />
           <EntitySet Name="productwmen" EntityType="Self.productwmen" />
           <EntitySet Name="role" EntityType="Self.role" />
           <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
           <EntitySet Name="users" EntityType="Self.users" />
+          <AssociationSet Name="FK_order_users" Association="Self.FK_order_users">
+            <End Role="users" EntitySet="users" />
+            <End Role="order" EntitySet="order" />
+          </AssociationSet>
           <AssociationSet Name="FK_users_role" Association="Self.FK_users_role">
             <End Role="role" EntitySet="role" />
             <End Role="users" EntitySet="users" />
@@ -168,6 +228,19 @@
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="Хранилище garmentModelContainer" CdmEntityContainer="garmentEntities">
+          <EntitySetMapping Name="order">
+            <EntityTypeMapping TypeName="garmentModel.order">
+              <MappingFragment StoreEntitySet="order">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="nameprod" ColumnName="nameprod" />
+                <ScalarProperty Name="season" ColumnName="season" />
+                <ScalarProperty Name="about" ColumnName="about" />
+                <ScalarProperty Name="color" ColumnName="color" />
+                <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="idUser" ColumnName="idUser" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="productmen">
             <EntityTypeMapping TypeName="garmentModel.productmen">
               <MappingFragment StoreEntitySet="productmen">

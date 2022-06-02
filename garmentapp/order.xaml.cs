@@ -15,25 +15,19 @@ using System.Windows.Shapes;
 namespace garmentapp
 {
     /// <summary>
-    /// Логика взаимодействия для AddEditProduct.xaml
+    /// Логика взаимодействия для order.xaml
     /// </summary>
-    public partial class AddEditProduct : Window
+    public partial class order : Window
     {
-
         productmen _currentnProduct = new productmen();
-        public AddEditProduct(productmen selecteProduct)
+        public order()
         {
             InitializeComponent();
-            if(selecteProduct != null)
-            {
-                _currentnProduct = selecteProduct;
-            }
-            DataContext = _currentnProduct;
         }
 
-        private void btnSave_Click(object sender, RoutedEventArgs e)
+        private void btnOrder_Click(object sender, RoutedEventArgs e)
         {
-            if(_currentnProduct.id == 0)
+            if (_currentnProduct.id == 0)
             {
                 garmentEntities.GetContext().productmen.Add(_currentnProduct);
             }

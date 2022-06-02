@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:garmentapp"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="450"
-      Title="SetingsProfile" Background="#dadfdf">
+      Title="Настройки аккаунта" Background="#dadfdf">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>

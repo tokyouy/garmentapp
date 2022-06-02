@@ -4,12 +4,14 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="dad6489b26434c99949e0409d6e146c6" Name="Diagram1">
+      <Diagram DiagramId="37c4ad32116e4b88a18a0c4a368ebebc" Name="Diagram1">
+        <EntityTypeShape EntityType="garmentModel.order" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="garmentModel.productmen" Width="1.5" PointX="0.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="garmentModel.productwmen" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="garmentModel.role" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
         <EntityTypeShape EntityType="garmentModel.sysdiagrams" Width="1.5" PointX="4.75" PointY="4.75" IsExpanded="true" />
         <EntityTypeShape EntityType="garmentModel.users" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
+        <AssociationConnector Association="garmentModel.FK_order_users" ManuallyRouted="false" />
         <AssociationConnector Association="garmentModel.FK_users_role" ManuallyRouted="false" />
       </Diagram>
     </edmx:Diagrams>

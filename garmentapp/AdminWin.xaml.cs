@@ -46,5 +46,11 @@ namespace garmentapp
         {
             MainFrame.Content = new AdminProduct();
         }
+
+        private void btnOrder_Click(object sender, RoutedEventArgs e)
+        {
+            orderList order = new orderList();
+            order.Show();
+        }
     }
 }
