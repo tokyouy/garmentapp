@@ -5,10 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:garmentapp"
         mc:Ignorable="d"
-        Title="Добавление/Редактирование товара" Height="450" Width="450" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Icon="/Assets/icon.png">
+        Title="Добавление/Редактирование товара" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Icon="/Assets/icon.png">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition Width="200"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -18,8 +19,9 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Canvas Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2" Background="DarkSlateGray"/>
+        <Canvas Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="3" Background="DarkSlateGray"/>
         <TextBlock Text="Бренд" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="0"/>
         <TextBlock Text="Наименование" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="1"/>
         <TextBlock Text="Сезон" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="2"/>
@@ -73,6 +75,8 @@
                 Красный
             </ComboBoxItem>
         </ComboBox>
+        <TextBlock Text="Количество" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="5"/>
+        <TextBox Height="30" Width="200" Grid.Column="1" Grid.Row="5" Text="{Binding amount}"></TextBox>
         <Button x:Name="btnSave" Content="Сохранить" Height="30" Width="200" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2" Grid.Row="6" Click="btnSave_Click"/>
     </Grid>
 </Window>

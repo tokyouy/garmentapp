@@ -67,5 +67,11 @@ namespace garmentapp
             var garment = garmentEntities.GetContext().productmen.Where(p => p.color.Contains(searchcolor.Text)).ToList();
             dgMenProducts.ItemsSource = garment;
         }
+
+        private void btnAbout_Click(object sender, RoutedEventArgs e)
+        {
+            aboutWin AboutWin = new aboutWin(dgMenProducts.SelectedItem as productmen);
+            AboutWin.Show();
+        }
     }
 }

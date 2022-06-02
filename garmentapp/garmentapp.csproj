@@ -67,6 +67,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="aboutWin.xaml.cs">
+      <DependentUpon>aboutWin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="aboutWinW.xaml.cs">
+      <DependentUpon>aboutWinW.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AddEditProduct.xaml.cs">
       <DependentUpon>AddEditProduct.xaml</DependentUpon>
     </Compile>
@@ -140,6 +146,14 @@
     <Compile Include="userWin.xaml.cs">
       <DependentUpon>userWin.xaml</DependentUpon>
     </Compile>
+    <Page Include="aboutWin.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="aboutWinW.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="AddEditProduct.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -74,5 +74,17 @@ namespace garmentapp
             AddEditProductW addEditProductw = new AddEditProductW(null);
             addEditProductw.Show();
         }
+
+        private void btnEdit_Click(object sender, RoutedEventArgs e)
+        {
+            AddEditProductW addEditProduct = new AddEditProductW(dgWMenProducts.SelectedItem as productwmen);
+            addEditProduct.Show();
+        }
+
+        private void btnAbout_Click(object sender, RoutedEventArgs e)
+        {
+            aboutWinW AboutWin = new aboutWinW(dgWMenProducts.SelectedItem as productwmen);
+            AboutWin.Show();
+        }
     }
 }

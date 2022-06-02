@@ -68,5 +68,11 @@ namespace garmentapp
             var currentItem = garmentEntities.GetContext().productwmen.Where(p => p.type == "Униформа одежда").ToList();
             dgWMenProducts.ItemsSource = currentItem;
         }
+
+        private void btnAbout_Click(object sender, RoutedEventArgs e)
+        {
+            aboutWinW AboutWin = new aboutWinW(dgWMenProducts.SelectedItem as productwmen);
+            AboutWin.Show();
+        }
     }
 }

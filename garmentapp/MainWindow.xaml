@@ -23,10 +23,12 @@
             <PasswordBox x:Name="pbPass" HorizontalAlignment="Center" VerticalAlignment="Top" Height="30" Width="275"
                       Margin="0,0"  Background="#FFFAFAFD" FontSize="18"/>
         </StackPanel>
-        <Canvas Grid.Row="2">
-            <Button x:Name="RegisterBtn" Content="Регистрация" Height="30" Width="130" FontSize="14" VerticalAlignment="Top" HorizontalAlignment="Right" Canvas.Right="115" Click="RegisterBtn_Click"/>
-            <Button x:Name="LoginBtn" Content="Войти" Height="30" Width="130" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="14" Canvas.Left="115" Click="LoginBtn_Click"/>
-            <Button x:Name="ReturnBtn" Content="Вернуться как гость"  Height="30" Width="270" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="14" Canvas.Left="115" Canvas.Top="45" Click="ReturnBtn_Click"/>
-        </Canvas>
+        <StackPanel Orientation="Horizontal" Grid.Row="2">
+            <Button x:Name="RegisterBtn" Content="Регистрация" Height="30" Width="120" FontSize="18" Click="RegisterBtn_Click" Margin="257,-80,0,0"/>
+            <Button x:Name="LoginBtn" Content="Войти" Height="30" Width="120" FontSize="18" Canvas.Left="115" Click="LoginBtn_Click" Margin="-420,-80,0,0"/>
+        </StackPanel>
+        <StackPanel Grid.Row="2">
+            <Button x:Name="ReturnBtn" Content="Вернуться как гость"  Height="30" Width="270" FontSize="18" Click="ReturnBtn_Click" Margin="50"/>
+        </StackPanel>
     </Grid>
 </Window>
