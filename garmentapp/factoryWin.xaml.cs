@@ -39,7 +39,7 @@ namespace garmentapp
 
         private void btnCatalog_Click_1(object sender, RoutedEventArgs e)
         {
-            MainFrame.Content = new listCatalog();
+            // MainFrame.Content = new listCatalog();
         }
     }
 }

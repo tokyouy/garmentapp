@@ -9,7 +9,8 @@ namespace garmentapp
 {
     class Manger
     {
-        public static DataGrid dgProducts;
         public static users validateUser;
+        public static DataGrid dbMenProducts;
+        public static DataGrid dbWMenProducts;
     }
 }

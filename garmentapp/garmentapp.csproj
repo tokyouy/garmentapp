@@ -82,9 +82,6 @@
     <Compile Include="AdminWin.xaml.cs">
       <DependentUpon>AdminWin.xaml</DependentUpon>
     </Compile>
-    <Compile Include="catalog.xaml.cs">
-      <DependentUpon>catalog.xaml</DependentUpon>
-    </Compile>
     <Compile Include="catalogMMan.xaml.cs">
       <DependentUpon>catalogMMan.xaml</DependentUpon>
     </Compile>
@@ -97,10 +94,6 @@
     <Compile Include="GuestWin.xaml.cs">
       <DependentUpon>GuestWin.xaml</DependentUpon>
     </Compile>
-    <Compile Include="listCatalog.xaml.cs">
-      <DependentUpon>listCatalog.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="MainFrame.cs" />
     <Compile Include="Manger.cs" />
     <Compile Include="Model1.Context.cs">
       <AutoGen>True</AutoGen>
@@ -161,10 +154,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="catalog.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="catalogMMan.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -178,10 +167,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="GuestWin.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="listCatalog.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

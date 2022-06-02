@@ -33,7 +33,7 @@ namespace garmentapp
 
         private void btnCatalog_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Content = new listCatalog();
+            // MainFrame.Content = new listCatalog();
         }
 
         private void btnOut_Click(object sender, RoutedEventArgs e)

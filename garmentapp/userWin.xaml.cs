@@ -34,5 +34,12 @@ namespace garmentapp
         {
             MainFrame.Content = new SetingsProfile(Manger.validateUser);
         }
+
+        private void btnOut_Click(object sender, RoutedEventArgs e)
+        {
+            MainWindow mainWin = new MainWindow();
+            mainWin.Show();
+            this.Hide();
+        }
     }
 }

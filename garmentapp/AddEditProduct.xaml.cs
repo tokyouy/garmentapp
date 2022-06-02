@@ -20,22 +20,22 @@ namespace garmentapp
     public partial class AddEditProduct : Window
     {
 
-        product _currentProduct = new product();
-        public AddEditProduct(product selecteProduct)
+        productmen _currentnProduct = new productmen();
+        public AddEditProduct(productmen selecteProduct)
         {
             InitializeComponent();
             if(selecteProduct != null)
             {
-                _currentProduct = selecteProduct;
+                _currentnProduct = selecteProduct;
             }
-            DataContext = _currentProduct;
+            DataContext = _currentnProduct;
         }
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
-            if(_currentProduct.id == 0)
+            if(_currentnProduct.id == 0)
             {
-                garmentEntities.GetContext().product.Add(_currentProduct);
+                garmentEntities.GetContext().productmen.Add(_currentnProduct);
             }
 
                 garmentEntities.GetContext().SaveChanges();

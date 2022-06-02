@@ -22,7 +22,6 @@ namespace garmentapp
         public GuestWin()
         {
             InitializeComponent();
-            MainFrame.Content = new listCatalog();
         }
 
         private void btnUserRegistration_Click(object sender, RoutedEventArgs e)
@@ -36,6 +35,16 @@ namespace garmentapp
             MainWindow mainWin = new MainWindow();
             mainWin.Show();
             this.Hide();
+        }
+
+        private void btnMCatalog_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Content = new catalogMMan();
+        }
+
+        private void btnWCatalog_Click(object sender, RoutedEventArgs e)
+        {
+            MainFrame.Content = new catalogWMan();
         }
     }
 }
