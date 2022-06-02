@@ -30,7 +30,7 @@
                        Background="#FFFAFAFD" FontSize="18" Text="{Binding password}" />
         </StackPanel>
         <StackPanel Grid.Row="2">
-            <Button Content="Зарегистрироваться" Height="30" Width="225" Click="Button_Click" FontSize="18"/>
+            <Button Background="White" Content="Зарегистрироваться" Height="30" Width="225" Click="Button_Click" FontSize="18"/>
         </StackPanel>
     </Grid>
 </Window>

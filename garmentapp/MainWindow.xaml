@@ -24,11 +24,11 @@
                       Margin="0,0"  Background="#FFFAFAFD" FontSize="18"/>
         </StackPanel>
         <StackPanel Orientation="Horizontal" Grid.Row="2">
-            <Button x:Name="RegisterBtn" Content="Регистрация" Height="30" Width="120" FontSize="18" Click="RegisterBtn_Click" Margin="257,-80,0,0"/>
-            <Button x:Name="LoginBtn" Content="Войти" Height="30" Width="120" FontSize="18" Canvas.Left="115" Click="LoginBtn_Click" Margin="-420,-80,0,0"/>
+            <Button Background="White" x:Name="RegisterBtn" Content="Регистрация" Height="30" Width="120" FontSize="18" Click="RegisterBtn_Click" Margin="257,-80,0,0"/>
+            <Button Background="White" x:Name="LoginBtn" Content="Войти" Height="30" Width="120" FontSize="18" Canvas.Left="115" Click="LoginBtn_Click" Margin="-420,-80,0,0"/>
         </StackPanel>
         <StackPanel Grid.Row="2">
-            <Button x:Name="ReturnBtn" Content="Вернуться как гость"  Height="30" Width="270" FontSize="18" Click="ReturnBtn_Click" Margin="50"/>
+            <Button Background="White" x:Name="ReturnBtn" Content="Вернуться как гость"  Height="30" Width="270" FontSize="18" Click="ReturnBtn_Click" Margin="50"/>
         </StackPanel>
     </Grid>
 </Window>

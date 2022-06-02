@@ -23,8 +23,9 @@
             <Label Content="USER" Canvas.Left="50" Canvas.Top="10" FontSize="50" Foreground="White"/>
         </Canvas>
         <Label Content="Категории" Grid.Row="1" Grid.Column="2" Margin="40,0,0,0" FontSize="30"/>
-        <Button x:Name="btnSettings" Content="Настройки" Background="White" Height="35" Width="200" FontSize="18" Grid.Row="0" Grid.Column="1" Margin="250,0,0,0" Click="btnSettings_Click"/>
-        <Button x:Name="btnOut" Content="Выход" Background="White" Height="35" Width="200" FontSize="18" Grid.Row="0" Grid.Column="1" Margin="700,0,0,0" Click="btnOut_Click"/>
+        <Button x:Name="btnOrder" Content="Заказы" Background="White" Height="50" Width="200" FontSize="18" Grid.Row="0" Grid.Column="1" Margin="-200,0,0,0" IsEnabled="False"/>
+        <Button x:Name="btnSettings" Content="Настройки" Background="White" Height="50" Width="200" FontSize="18" Grid.Row="0" Grid.Column="1" Margin="250,0,0,0" Click="btnSettings_Click"/>
+        <Button x:Name="btnOut" Content="Выход" Background="White" Height="50" Width="200" FontSize="18" Grid.Row="0" Grid.Column="1" Margin="700,0,0,0" Click="btnOut_Click"/>
         <Button x:Name="btnMCatalog" Content="Мужская одежда" Background="White" Height="50" Width="200" FontSize="18" Grid.Row="1" Grid.Column="1" Margin="600,0,0,0" Click="btnMCatalog_Click"/>
         <Button x:Name="btnWCatalog" Content="Женская одежда" Background="White" Height="50" Width="200" FontSize="18" Grid.Row="1" Grid.Column="1" Margin="150,0,0,0" Click="btnWCatalog_Click"/>
         <Button Grid.Row="1" Grid.Column="1" Height="50" Width="200" Content="Прочее" IsEnabled="False" Margin="-300,0,0,0"/>

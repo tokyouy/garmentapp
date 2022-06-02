@@ -22,9 +22,9 @@
         <Canvas Name="Logo" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" Background="DarkSlateGray">
             <Label Content="ADMIN" Canvas.Left="35" Canvas.Top="10" FontSize="50" Foreground="White"/>
         </Canvas>
-        <Button x:Name="btnOrder" Content="Заказы" Background="White" Height="35" Width="200" FontSize="18" Grid.Row="0" Grid.Column="1" Margin="-250,0,0,0" IsEnabled="False"/>
-        <Button x:Name="btnUsers" Content="Пользователи" Background="White" Height="35" Width="200" FontSize="18" Grid.Row="0" Grid.Column="1" Margin="200,0,0,0" Click="btnUsers_Click" />
-        <Button x:Name="btnOut" Content="Выйти" Background="White" Height="35" Width="200" FontSize="18" Grid.Row="0" Grid.Column="1" Margin="650,0,0,0" Click="btnOut_Click" />
+        <Button x:Name="btnOrder" Content="Заказы" Background="White" Height="50" Width="200" FontSize="18" Grid.Row="0" Grid.Column="1" Margin="-250,0,0,0" IsEnabled="False"/>
+        <Button x:Name="btnUsers" Content="Пользователи" Background="White" Height="50" Width="200" FontSize="18" Grid.Row="0" Grid.Column="1" Margin="200,0,0,0" Click="btnUsers_Click" />
+        <Button x:Name="btnOut" Content="Выйти" Background="White" Height="50" Width="200" FontSize="18" Grid.Row="0" Grid.Column="1" Margin="650,0,0,0" Click="btnOut_Click" />
         <Label Content="Категории" Grid.Row="1" Grid.Column="2" Margin="40,0,0,0" FontSize="30"/>
         <Button x:Name="btnMCatalog" Content="Мужская одежда" Background="White" Height="50" Width="200" FontSize="18" Grid.Row="1" Grid.Column="1" Margin="600,0,0,0" Click="btnMCatalog_Click"/>
         <Button x:Name="btnWCatalog" Content="Женская одежда" Background="White" Height="50" Width="200" FontSize="18" Grid.Row="1" Grid.Column="1" Margin="150,0,0,0" Click="btnWCatalog_Click" />

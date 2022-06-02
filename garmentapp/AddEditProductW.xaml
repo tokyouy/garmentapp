@@ -77,6 +77,6 @@
         </ComboBox>
         <TextBlock Text="Количество" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="5"/>
         <TextBox Height="30" Width="200" Grid.Column="1" Grid.Row="5" Text="{Binding amount}"></TextBox>
-        <Button x:Name="btnSave" Content="Сохранить" Height="30" Width="200" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2" Grid.Row="6" Click="btnSave_Click"/>
+        <Button Background="White" x:Name="btnSave" Content="Сохранить" Height="30" Width="200" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2" Grid.Row="6" Click="btnSave_Click"/>
     </Grid>
 </Window>

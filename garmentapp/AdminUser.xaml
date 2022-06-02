@@ -19,7 +19,7 @@
         <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Left">
             <TextBox x:Name="searchlogin" Width="100" Margin="20,30,0,10" TextChanged="searchbrend_TextChanged"></TextBox>
         </StackPanel>
-        <DataGrid Grid.Row="1" Name="dgUsers" AutoGenerateColumns="False" IsReadOnly="True">
+        <DataGrid Background="White" Grid.Row="1" Name="dgUsers" AutoGenerateColumns="False" IsReadOnly="True">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="ID" Binding="{Binding id}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Имя" Binding="{Binding firstName}"></DataGridTextColumn>
@@ -40,7 +40,7 @@
             </DataGrid.Columns>
         </DataGrid>
         <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Button x:Name="btnAdd" Content="Добавить" Height="30" Width="100" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,10,0" Click="btnAdd_Click"/>
+            <Button Background="White" x:Name="btnAdd" Content="Добавить" Height="30" Width="100" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,10,0" Click="btnAdd_Click"/>
         </StackPanel>
     </Grid>
 </Window>
