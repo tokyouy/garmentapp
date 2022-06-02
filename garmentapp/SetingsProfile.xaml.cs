@@ -56,10 +56,5 @@ namespace garmentapp
                 MessageBox.Show($"Вы ввели неверный пароль подтверждения!", "Ошибка", MessageBoxButton.OK, MessageBoxImage.Error);
             }
         }
-
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
     }
 }

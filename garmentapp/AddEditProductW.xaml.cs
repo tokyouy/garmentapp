@@ -15,31 +15,30 @@ using System.Windows.Shapes;
 namespace garmentapp
 {
     /// <summary>
-    /// Логика взаимодействия для AddEditProduct.xaml
+    /// Логика взаимодействия для AddEditProductW.xaml
     /// </summary>
-    public partial class AddEditProduct : Window
+    public partial class AddEditProductW : Window
     {
-
-        productmen _currentnProduct = new productmen();
-        public AddEditProduct(productmen selecteProduct)
+        productwmen _currentnProduct = new productwmen();
+        public AddEditProductW(productwmen selecteProduct)
         {
             InitializeComponent();
-            if(selecteProduct != null)
+            if (selecteProduct != null)
             {
                 _currentnProduct = selecteProduct;
             }
             DataContext = _currentnProduct;
+
         }
 
         private void btnSave_Click(object sender, RoutedEventArgs e)
         {
-            if(_currentnProduct.id == 0)
+            if (_currentnProduct.id == 0)
             {
-                garmentEntities.GetContext().productmen.Add(_currentnProduct);
+                garmentEntities.GetContext().productwmen.Add(_currentnProduct);
             }
             garmentEntities.GetContext().SaveChanges();
             MessageBox.Show($"Данные обнавлены успешно!", "Успех!", MessageBoxButton.OK, MessageBoxImage.Information);
-
         }
     }
 }

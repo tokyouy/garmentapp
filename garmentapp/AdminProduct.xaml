@@ -47,8 +47,9 @@
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
-                            <StackPanel>
+                            <StackPanel Orientation="Horizontal" >
                                 <Button x:Name="btnAbout" Content="О продукте"/>
+                                <Button x:Name="btnEdit" Content="Редактировать" Click="btnEdit_Click_1"/>
                             </StackPanel>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>

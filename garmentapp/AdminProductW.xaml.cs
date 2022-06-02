@@ -71,8 +71,8 @@ namespace garmentapp
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-            AddEditProduct addEditProduct = new AddEditProduct(null);
-            addEditProduct.Show();
+            AddEditProductW addEditProductw = new AddEditProductW(null);
+            addEditProductw.Show();
         }
     }
 }

@@ -26,12 +26,6 @@ namespace garmentapp
             dgMenProducts.ItemsSource = garmentEntities.GetContext().productmen.ToList();
         }
 
-        private void btnEdit_Click(object sender, RoutedEventArgs e)
-        {
-            AddEditProduct addEditProduct = new AddEditProduct(dgMenProducts.SelectedItem as productmen);
-            addEditProduct.Show();
-        }
-
         private void btnDelate_Click(object sender, RoutedEventArgs e)
         {
             if (MessageBox.Show("Вы уверены что хотите удалить запись?", "Вы уверены?", MessageBoxButton.YesNo, MessageBoxImage.Question) == MessageBoxResult.Yes)
@@ -102,6 +96,12 @@ namespace garmentapp
         {
             var currentItem = garmentEntities.GetContext().productmen.Where(p => p.type == "Униформа").ToList();
             dgMenProducts.ItemsSource = currentItem;
+        }
+
+        private void btnEdit_Click_1(object sender, RoutedEventArgs e)
+        {
+            AddEditProduct addEditProduct = new AddEditProduct(dgMenProducts.SelectedItem as productmen);
+            addEditProduct.Show();
         }
     }
 }
