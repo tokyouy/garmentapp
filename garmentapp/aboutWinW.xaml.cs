@@ -28,6 +28,7 @@ namespace garmentapp
                 _currentnProduct = selecteProduct;
             }
             DataContext = _currentnProduct;
+
         }
 
         private void btnClose_Click(object sender, RoutedEventArgs e)

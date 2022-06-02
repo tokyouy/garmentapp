@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:garmentapp"
         mc:Ignorable="d"
-        Title="Добавление/Редактирование товара" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Icon="/Assets/icon.png">
+        Title="Добавление/Редактирование товара" Height="550" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="CanMinimize" Icon="/Assets/icon.png">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="250"/>
@@ -13,6 +13,7 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
@@ -77,6 +78,22 @@
         </ComboBox>
         <TextBlock Text="Количество" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="5"/>
         <TextBox Height="30" Width="200" Grid.Column="1" Grid.Row="5" Text="{Binding amount}"></TextBox>
-        <Button Background="White" x:Name="btnSave" Content="Сохранить" Height="30" Width="200" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2" Grid.Row="6" Click="btnSave_Click"/>
+        <TextBlock Text="Размер" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="6"/>
+        <ComboBox Height="30" Width="200" Grid.Column="1" Grid.Row="6" Text="{Binding size}">
+            <ComboBoxItem>
+                XS
+            </ComboBoxItem>
+            <ComboBoxItem>
+                S
+            </ComboBoxItem>
+            M
+        <ComboBoxItem>
+            L
+        </ComboBoxItem>
+        <ComboBoxItem>
+            XL
+        </ComboBoxItem>
+        </ComboBox>
+        <Button Background="White" x:Name="btnSave" Content="Сохранить" Height="30" Width="200" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2" Grid.Row="7" Click="btnSave_Click"/>
     </Grid>
 </Window>

@@ -44,6 +44,7 @@
                 <DataGridTextColumn Header="Сезон" Binding="{Binding season}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Цвет" Binding="{Binding color}"></DataGridTextColumn>
                 <DataGridTextColumn Header="Количество" Binding="{Binding amount}"></DataGridTextColumn>
+                <DataGridTextColumn Header="Размер" Binding="{Binding size}"></DataGridTextColumn>
                 <DataGridTemplateColumn>
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

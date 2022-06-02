@@ -52,5 +52,12 @@ namespace garmentapp
         {
             MainFrame.Content = new catalogWMan();
         }
+
+        private void btnOrder_Click(object sender, RoutedEventArgs e)
+        {
+            order orderWin = new order();
+            orderWin.Show();
+            this.Hide();
+        }
     }
 }

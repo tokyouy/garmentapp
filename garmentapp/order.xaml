@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:garmentapp"
         mc:Ignorable="d"
-        Title="Формирование заказа" Height="450" Width="500" ResizeMode="NoResize" Icon="/Assets/icon.png">
+        Title="Формирование заказа" Height="550" Width="500" ResizeMode="NoResize" Icon="/Assets/icon.png">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="250"/>
@@ -20,14 +20,16 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
-        <Canvas Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="3" Background="DarkSlateGray"/>
+        <Canvas Grid.Row="8" Grid.Column="0" Grid.ColumnSpan="3" Background="DarkSlateGray"/>
         <TextBlock Text="Имя" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="0"/>
         <TextBlock Text="Бренд" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="1"/>
         <TextBlock Text="Наименование" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="2"/>
         <TextBlock Text="Сезон" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="3"/>
         <TextBlock Text="Тип" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="4"/>
         <TextBlock Text="Цвет" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="5"/>
+        <TextBlock Text="Размер" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="7"/>
         <TextBox Text="{Binding login}" Grid.Row="0" Grid.Column="1" Height="30" Width="200" IsEnabled="False"/>
         <ComboBox Text="{Binding brend}" Height="30" Width="200" Grid.Column="1" Grid.Row="1">
             <ComboBoxItem>
@@ -79,6 +81,21 @@
         </ComboBox>
         <TextBlock Text="Количество" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="6"/>
         <TextBox Height="30" Width="200" Grid.Column="1" Grid.Row="6" Text="{Binding amount}"></TextBox>
-        <Button Background="White" x:Name="btnOrder" Content="Заказать" Height="30" Width="200" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2" Grid.Row="7" Click="btnOrder_Click"/>
+        <ComboBox Height="30" Width="200" Grid.Column="1" Grid.Row="7" Text="{Binding size}">
+            <ComboBoxItem>
+                XS
+            </ComboBoxItem>
+            <ComboBoxItem>
+                S
+            </ComboBoxItem>
+            M
+        </ComboBox>
+        <ComboBoxItem>
+            L
+        </ComboBoxItem>
+        <ComboBoxItem>
+            XL
+        </ComboBoxItem>
+        <Button Background="White" x:Name="btnOrder" Content="Заказать" Height="30" Width="200" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2" Grid.Row="9" Click="btnOrder_Click"/>
     </Grid>
 </Window>

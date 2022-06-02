@@ -20,6 +20,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Canvas Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="3" Background="DarkSlateGray"/>
         <TextBlock Text="Бренд" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="0"/>
@@ -77,6 +78,22 @@
         </ComboBox>
         <TextBlock Text="Количество" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="5"/>
         <TextBox Height="30" Width="200" Grid.Column="1" Grid.Row="5" Text="{Binding amount}" IsEnabled="False"></TextBox>
-        <Button Background="White" x:Name="btnClose" Content="Закрыть" Height="30" Width="200" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2" Grid.Row="6" Click="btnSave_Click"/>
+        <TextBlock Text="Размер" FontSize="30" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" Grid.Row="6"/>
+        <ComboBox Height="30" Width="200" Grid.Column="1" Grid.Row="6" Text="{Binding size}">
+            <ComboBoxItem>
+                XS
+            </ComboBoxItem>
+            <ComboBoxItem>
+                S
+            </ComboBoxItem>
+            M
+        </ComboBox>
+        <ComboBoxItem>
+            L
+        </ComboBoxItem>
+        <ComboBoxItem>
+            XL
+        </ComboBoxItem>
+        <Button Background="White" x:Name="btnClose" Content="Закрыть" Height="30" Width="200" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.ColumnSpan="2" Grid.Row="7" Click="btnSave_Click"/>
     </Grid>
 </Window>
