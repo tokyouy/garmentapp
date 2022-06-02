@@ -56,11 +56,6 @@ namespace garmentapp
             addEditProduct.Show();
         }
 
-        private void btnOut_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
         private void searchbrend_TextChanged(object sender, TextChangedEventArgs e)
         {
             var garment = garmentEntities.GetContext().productmen.Where(p => p.brend.Contains(searchbrend.Text)).ToList();
@@ -79,17 +74,34 @@ namespace garmentapp
             dgMenProducts.ItemsSource = garment;
         }
 
-        private void searchtype_TextChanged(object sender, TextChangedEventArgs e)
-        {
-            // var garment = garmentEntities.GetContext().product.Where(p => p.type.Contains(searchtype.Text)).ToList();
-            // dgProducts.ItemsSource = garment;
-        }
-
         private void btnAdd_Click_1(object sender, RoutedEventArgs e)
         {
             AddEditProduct addEditProduct = new AddEditProduct(null);
             addEditProduct.Show();
         }
 
+        private void typeAll_Click(object sender, RoutedEventArgs e)
+        {
+            var currentItem = garmentEntities.GetContext().productmen.ToList();
+            dgMenProducts.ItemsSource = currentItem;
+        }
+
+        private void typeCorp_Click(object sender, RoutedEventArgs e)
+        {
+            var currentItem = garmentEntities.GetContext().productmen.Where(p => p.type == "Корпоративная одежда").ToList();
+            dgMenProducts.ItemsSource = currentItem;
+        }
+
+        private void typeDayZ_Click(object sender, RoutedEventArgs e)
+        {
+            var currentItem = garmentEntities.GetContext().productmen.Where(p => p.type == "Повседневная одежда").ToList();
+            dgMenProducts.ItemsSource = currentItem;
+        }
+
+        private void typeUni_Click(object sender, RoutedEventArgs e)
+        {
+            var currentItem = garmentEntities.GetContext().productmen.Where(p => p.type == "Униформа").ToList();
+            dgMenProducts.ItemsSource = currentItem;
+        }
     }
 }

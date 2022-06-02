@@ -23,46 +23,56 @@ namespace garmentapp
         public AdminProductW()
         {
             InitializeComponent();
+            dgWMenProducts.ItemsSource = garmentEntities.GetContext().productwmen.ToList();
+            Manger.dbWMenProducts = dgWMenProducts;
         }
 
         private void searchbrend_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            var garment = garmentEntities.GetContext().productwmen.Where(p => p.brend.Contains(searchbrend.Text)).ToList();
+            dgWMenProducts.ItemsSource = garment;
         }
 
         private void searchseason_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            var garment = garmentEntities.GetContext().productwmen.Where(p => p.brend.Contains(searchbrend.Text)).ToList();
+            dgWMenProducts.ItemsSource = garment;
         }
 
         private void searchcolor_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            var garment = garmentEntities.GetContext().productwmen.Where(p => p.color.Contains(searchcolor.Text)).ToList();
+            dgWMenProducts.ItemsSource = garment;
         }
 
         private void typeAll_Click(object sender, RoutedEventArgs e)
         {
-
+            var currentItem = garmentEntities.GetContext().productwmen.ToList();
+            dgWMenProducts.ItemsSource = currentItem;
         }
 
         private void typeCorp_Click(object sender, RoutedEventArgs e)
         {
-
+            var currentItem = garmentEntities.GetContext().productwmen.Where(p => p.type == "Корпоративная одежда").ToList();
+            dgWMenProducts.ItemsSource = currentItem;
         }
 
         private void typeDayZ_Click(object sender, RoutedEventArgs e)
         {
-
+            var currentItem = garmentEntities.GetContext().productwmen.Where(p => p.type == "Корпоративная одежда").ToList();
+            dgWMenProducts.ItemsSource = currentItem;
         }
 
         private void typeUni_Click(object sender, RoutedEventArgs e)
         {
-
+            var currentItem = garmentEntities.GetContext().productwmen.Where(p => p.type == "Униформа одежда").ToList();
+            dgWMenProducts.ItemsSource = currentItem;
         }
 
-        private void btnAdd_Click_1(object sender, RoutedEventArgs e)
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
         {
-
+            AddEditProduct addEditProduct = new AddEditProduct(null);
+            addEditProduct.Show();
         }
     }
 }

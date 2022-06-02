@@ -41,17 +41,12 @@ namespace garmentapp
 
         private void btnMCatalog_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Content = new catalogMMan();
+            MainFrame.Content = new AdminProduct();
         }
 
         private void btnWCatalog_Click(object sender, RoutedEventArgs e)
         {
-            MainFrame.Content = new catalogWMan();
-        }
-
-        private void btnCatalog_Click_1(object sender, RoutedEventArgs e)
-        {
-            MainFrame.Content = new catalogWMan();
+            MainFrame.Content = new AdminProductW();
         }
     }
 }

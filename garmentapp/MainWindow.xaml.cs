@@ -73,7 +73,7 @@ namespace garmentapp
 
         private void ReturnBtn_Click(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWin = new MainWindow();
+            GuestWin mainWin = new GuestWin();
             mainWin.Show();
             this.Hide();
         }

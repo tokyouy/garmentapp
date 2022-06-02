@@ -23,25 +23,25 @@ namespace garmentapp
         public catalogWMan()
         {
             InitializeComponent();
-            dgWMenProducts.ItemsSource = garmentEntities.GetContext().productmen.ToList();
+            dgWMenProducts.ItemsSource = garmentEntities.GetContext().productwmen.ToList();
             Manger.dbWMenProducts = dgWMenProducts;
         }
 
         private void searchbrend_TextChanged(object sender, TextChangedEventArgs e)
         {
-            var garment = garmentEntities.GetContext().productmen.Where(p => p.brend.Contains(searchbrend.Text)).ToList();
+            var garment = garmentEntities.GetContext().productwmen.Where(p => p.brend.Contains(searchbrend.Text)).ToList();
             dgWMenProducts.ItemsSource = garment;
         }
 
         private void searchseason_TextChanged(object sender, TextChangedEventArgs e)
         {
-            var garment = garmentEntities.GetContext().productmen.Where(p => p.season.Contains(searchseason.Text)).ToList();
+            var garment = garmentEntities.GetContext().productwmen.Where(p => p.season.Contains(searchseason.Text)).ToList();
             dgWMenProducts.ItemsSource = garment;
         }
 
         private void searchcolor_TextChanged(object sender, TextChangedEventArgs e)
         {
-            var garment = garmentEntities.GetContext().productmen.Where(p => p.color.Contains(searchcolor.Text)).ToList();
+            var garment = garmentEntities.GetContext().productwmen.Where(p => p.color.Contains(searchcolor.Text)).ToList();
             dgWMenProducts.ItemsSource = garment;
         }
 
