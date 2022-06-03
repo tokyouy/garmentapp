@@ -55,8 +55,8 @@ namespace garmentapp
 
         private void btnOrder_Click(object sender, RoutedEventArgs e)
         {
-            order orderWin = new order();
-            orderWin.Show();
+            orderWin orderWin1 = new orderWin();
+            orderWin1.Show();
         }
     }
 }

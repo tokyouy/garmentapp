@@ -65,7 +65,7 @@ namespace garmentapp
 
         private void typeUni_Click(object sender, RoutedEventArgs e)
         {
-            var currentItem = garmentEntities.GetContext().productwmen.Where(p => p.type == "Униформа одежда").ToList();
+            var currentItem = garmentEntities.GetContext().productwmen.Where(p => p.type == "Униформа").ToList();
             dgWMenProducts.ItemsSource = currentItem;
         }
 

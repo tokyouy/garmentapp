@@ -17,22 +17,24 @@ namespace garmentapp
     /// <summary>
     /// Логика взаимодействия для order.xaml
     /// </summary>
-    public partial class order : Window
+    public partial class orderWin : Window
     {
-        productmen _currentnProduct = new productmen();
-        public order()
+        order _currentnProduct = new order();
+        public orderWin()
         {
             InitializeComponent();
+            DataContext = _currentnProduct;
         }
 
         private void btnOrder_Click(object sender, RoutedEventArgs e)
         {
             if (_currentnProduct.id == 0)
             {
-                garmentEntities.GetContext().productmen.Add(_currentnProduct);
+                _currentnProduct.idUser = Manger.validateUser.id;
+                garmentEntities.GetContext().order.Add(_currentnProduct);
             }
             garmentEntities.GetContext().SaveChanges();
-            MessageBox.Show($"Данные обнавлены успешно!", "Успех!", MessageBoxButton.OK, MessageBoxImage.Information);
+            MessageBox.Show($"Данные добавлены успешно!", "Успех!", MessageBoxButton.OK, MessageBoxImage.Information);
         }
     }
 }
