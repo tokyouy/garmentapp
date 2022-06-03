@@ -15,7 +15,7 @@
           <Property Name="about" Type="nvarchar(max)" Nullable="false" />
           <Property Name="color" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="amount" Type="int" Nullable="false" />
-          <Property Name="idUser" Type="int" Nullable="false" />
+          <Property Name="idUser" Type="int" />
         </EntityType>
         <EntityType Name="productmen">
           <Key>
@@ -28,6 +28,8 @@
           <Property Name="season" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="color" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="amount" Type="int" Nullable="false" />
+          <Property Name="size" Type="nvarchar" MaxLength="50" />
+          <Property Name="Imageid" Type="int" />
         </EntityType>
         <EntityType Name="productwmen">
           <Key>
@@ -40,6 +42,8 @@
           <Property Name="season" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="color" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="amount" Type="int" Nullable="false" />
+          <Property Name="size" Type="nvarchar" MaxLength="50" />
+          <Property Name="imageid" Type="int" />
         </EntityType>
         <EntityType Name="role">
           <Key>
@@ -70,7 +74,7 @@
           <Property Name="roleid" Type="int" Nullable="false" />
         </EntityType>
         <Association Name="FK_order_users">
-          <End Role="users" Type="Self.users" Multiplicity="1" />
+          <End Role="users" Type="Self.users" Multiplicity="0..1" />
           <End Role="order" Type="Self.order" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="users">
@@ -124,7 +128,7 @@
           <Property Name="about" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="color" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="amount" Type="Int32" Nullable="false" />
-          <Property Name="idUser" Type="Int32" Nullable="false" />
+          <Property Name="idUser" Type="Int32" />
           <NavigationProperty Name="users" Relationship="Self.FK_order_users" FromRole="order" ToRole="users" />
         </EntityType>
         <EntityType Name="productmen">
@@ -138,6 +142,8 @@
           <Property Name="season" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="color" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="amount" Type="Int32" Nullable="false" />
+          <Property Name="size" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Imageid" Type="Int32" />
         </EntityType>
         <EntityType Name="productwmen">
           <Key>
@@ -150,6 +156,8 @@
           <Property Name="season" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="color" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="amount" Type="Int32" Nullable="false" />
+          <Property Name="size" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="imageid" Type="Int32" />
         </EntityType>
         <EntityType Name="role">
           <Key>
@@ -183,7 +191,7 @@
           <NavigationProperty Name="role" Relationship="Self.FK_users_role" FromRole="users" ToRole="role" />
         </EntityType>
         <Association Name="FK_order_users">
-          <End Role="users" Type="Self.users" Multiplicity="1" />
+          <End Role="users" Type="Self.users" Multiplicity="0..1" />
           <End Role="order" Type="Self.order" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="users">
@@ -251,6 +259,8 @@
                 <ScalarProperty Name="season" ColumnName="season" />
                 <ScalarProperty Name="color" ColumnName="color" />
                 <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="size" ColumnName="size" />
+                <ScalarProperty Name="Imageid" ColumnName="Imageid" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -264,6 +274,8 @@
                 <ScalarProperty Name="season" ColumnName="season" />
                 <ScalarProperty Name="color" ColumnName="color" />
                 <ScalarProperty Name="amount" ColumnName="amount" />
+                <ScalarProperty Name="size" ColumnName="size" />
+                <ScalarProperty Name="imageid" ColumnName="imageid" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

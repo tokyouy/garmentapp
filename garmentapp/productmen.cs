@@ -21,5 +21,7 @@ namespace garmentapp
         public string season { get; set; }
         public string color { get; set; }
         public int amount { get; set; }
+        public string size { get; set; }
+        public Nullable<int> Imageid { get; set; }
     }
 }

@@ -20,7 +20,7 @@ namespace garmentapp
         public string about { get; set; }
         public string color { get; set; }
         public int amount { get; set; }
-        public int idUser { get; set; }
+        public Nullable<int> idUser { get; set; }
     
         public virtual users users { get; set; }
     }
